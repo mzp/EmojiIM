@@ -10,7 +10,7 @@
 		130DC5D51F65F91D00BBCB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DC5D41F65F91D00BBCB60 /* AppDelegate.swift */; };
 		130DC5D71F65F91D00BBCB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130DC5D61F65F91D00BBCB60 /* Assets.xcassets */; };
 		130DC5DA1F65F91D00BBCB60 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130DC5D81F65F91D00BBCB60 /* MainMenu.xib */; };
-		D2C7433B2AE1FCE9A40E8CE9 /* libPods-EmojiIM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3A8CB90F5749F56CC28F9C /* libPods-EmojiIM.a */; };
+		B59FE0B7360D6BD909052453 /* Pods_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +20,8 @@
 		130DC5D91F65F91D00BBCB60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		130DC5DB1F65F91D00BBCB60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiIM.entitlements; sourceTree = "<group>"; };
+		9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BF5F5E4DF0D797F60588E8 /* Pods-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
-		EC3A8CB90F5749F56CC28F9C /* libPods-EmojiIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EmojiIM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6525D0AA323BA4CB2F273D7 /* Pods-EmojiIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C7433B2AE1FCE9A40E8CE9 /* libPods-EmojiIM.a in Frameworks */,
+				B59FE0B7360D6BD909052453 /* Pods_EmojiIM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +40,7 @@
 		01883907C1BC4F82D160FC2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC3A8CB90F5749F56CC28F9C /* libPods-EmojiIM.a */,
+				9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,9 +201,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/※ikemen/Ikemen.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ikemen.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
