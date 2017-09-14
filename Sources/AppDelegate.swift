@@ -7,6 +7,9 @@
 //
 
 import Cocoa
+import InputMethodKit
+
+private var server: IMKServer?
 
 @NSApplicationMain
 internal class AppDelegate: NSObject, NSApplicationDelegate {
@@ -15,6 +18,8 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        let identifier = Bundle.main.bundleIdentifier
+        server = IMKServer(name: "EmojiInputSession", bundleIdentifier: identifier)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
