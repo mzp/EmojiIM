@@ -8,6 +8,7 @@
 
 import InputMethodKit
 
+@objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func inputText(_ string: String!, client sender: Any!) -> Bool {
