@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "InputMethodIcon@2x.tiff"; sourceTree = "<group>"; };
 		130DC5D11F65F91D00BBCB60 /* EmojiIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		130DC5D41F65F91D00BBCB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		130DC5D61F65F91D00BBCB60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 				130DC5D81F65F91D00BBCB60 /* MainMenu.xib */,
 				130DC5DB1F65F91D00BBCB60 /* Info.plist */,
 				134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */,
+				130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */,
 				130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */,
 			);
 			path = Resources;
