@@ -1,5 +1,10 @@
 /Pods
 
+# Fastlane
+/fastlane/README.md
+/fastlane/report.xml
+/fastlane/test_output
+
 ### https://raw.github.com/github/gitignore/0f88fa75def7ed7d96935b8630793e51953df9b0/Global/xcode.gitignore
 
 # Xcode

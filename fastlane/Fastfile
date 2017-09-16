@@ -1,0 +1,20 @@
+fastlane_version "2.56.0"
+
+default_platform :mac
+xcversion(version: '9.0')
+
+platform :mac do
+  before_all do
+    cocoapods
+  end
+
+  desc 'Install input method to local'
+  lane :dev do
+    input_methods = Pathname.new('~/Library/Input Methods').expand_path
+    system 'killall EmojiIM'
+    input_methods.join('EmojiIM.app').rmtree rescue nil
+    input_methods.join('EmojiIM.app.dSYM.zip').rmtree rescue nil
+    gym(output_directory: input_methods.to_s)
+    system 'killall EmojiIM'
+  end
+end

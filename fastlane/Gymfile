@@ -1,0 +1,2 @@
+scheme 'EmojiIM'
+output_directory './Build'

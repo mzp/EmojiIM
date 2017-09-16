@@ -118,7 +118,6 @@
 				130DC5CF1F65F91D00BBCB60 /* Resources */,
 				9A020B32C755D7802F2EE1FC /* [CP] Embed Pods Frameworks */,
 				DD6298181D1BD05F2DE0CD0C /* [CP] Copy Pods Resources */,
-				134922E11F6B349B000AA483 /* Install InputMethod */,
 			);
 			buildRules = (
 			);
@@ -195,20 +194,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd \"${PODS_ROOT}/..\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"";
-		};
-		134922E11F6B349B000AA483 /* Install InputMethod */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Install InputMethod";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "killall $EXECUTABLE_NAME\npwd\nls -l\ncp -r $BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME \"$HOME/Library/Input Methods/\"";
 		};
 		13B7E6601F6D6288008C528A /* EmbedBuildInfo */ = {
 			isa = PBXShellScriptBuildPhase;
