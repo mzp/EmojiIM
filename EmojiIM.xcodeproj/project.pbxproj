@@ -110,8 +110,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 130DC5DF1F65F91D00BBCB60 /* Build configuration list for PBXNativeTarget "EmojiIM" */;
 			buildPhases = (
-				13B7E6601F6D6288008C528A /* EmbedBuildInfo */,
 				82F21B7BB19A1C7B725D6C36 /* [CP] Check Pods Manifest.lock */,
+				13B7E6601F6D6288008C528A /* EmbedBuildInfo */,
 				130DC5E31F65FB5A00BBCB60 /* SwiftLint */,
 				130DC5CD1F65F91D00BBCB60 /* Sources */,
 				130DC5CE1F65F91D00BBCB60 /* Frameworks */,
