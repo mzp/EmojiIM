@@ -17,9 +17,8 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet private weak var window: NSWindow!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        let identifier = Bundle.main.bundleIdentifier
-        server = IMKServer(name: "EmojiInputSession", bundleIdentifier: identifier)
+        NSLog("EmojiIM launching: \(kBuiltDate)(\(kRevision))")
+        server = IMKServer(name: "EmojiInputSession", bundleIdentifier: Bundle.main.bundleIdentifier)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

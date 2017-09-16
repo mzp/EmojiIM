@@ -12,6 +12,7 @@
 		130DC5DA1F65F91D00BBCB60 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130DC5D81F65F91D00BBCB60 /* MainMenu.xib */; };
 		134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134922DE1F6B33AF000AA483 /* EmojiInputController.swift */; };
 		134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
+		13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		B59FE0B7360D6BD909052453 /* Pods_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiIM.entitlements; sourceTree = "<group>"; };
 		134922DE1F6B33AF000AA483 /* EmojiInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiInputController.swift; sourceTree = "<group>"; };
 		134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InputMethodIcon.tiff; sourceTree = "<group>"; };
+		13B7E6611F6D631F008C528A /* BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
 		9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BF5F5E4DF0D797F60588E8 /* Pods-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
 		F6525D0AA323BA4CB2F273D7 /* Pods-EmojiIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.release.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		130DC5C81F65F91D00BBCB60 = {
 			isa = PBXGroup;
 			children = (
+				13B7E6611F6D631F008C528A /* BuildInfo.swift */,
 				130DC5E21F65F95E00BBCB60 /* Sources */,
 				130DC5D31F65F91D00BBCB60 /* Resources */,
 				130DC5D21F65F91D00BBCB60 /* Products */,
@@ -107,6 +110,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 130DC5DF1F65F91D00BBCB60 /* Build configuration list for PBXNativeTarget "EmojiIM" */;
 			buildPhases = (
+				13B7E6601F6D6288008C528A /* EmbedBuildInfo */,
 				82F21B7BB19A1C7B725D6C36 /* [CP] Check Pods Manifest.lock */,
 				130DC5E31F65FB5A00BBCB60 /* SwiftLint */,
 				130DC5CD1F65F91D00BBCB60 /* Sources */,
@@ -206,6 +210,20 @@
 			shellPath = /bin/sh;
 			shellScript = "killall $EXECUTABLE_NAME\npwd\nls -l\ncp -r $BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME \"$HOME/Library/Input Methods/\"";
 		};
+		13B7E6601F6D6288008C528A /* EmbedBuildInfo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = EmbedBuildInfo;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"let kRevision = \\\"$(git rev-parse HEAD)\\\"\" > BuildInfo.swift\necho \"let kBuiltDate = \\\"$(date)\\\"\" >> BuildInfo.swift";
+		};
 		82F21B7BB19A1C7B725D6C36 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				130DC5D51F65F91D00BBCB60 /* AppDelegate.swift in Sources */,
+				13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */,
 				134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
