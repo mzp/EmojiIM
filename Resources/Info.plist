@@ -24,8 +24,6 @@
 	<string>EmojiInputSession</string>
 	<key>InputMethodServerControllerClass</key>
 	<string>EmojiInputController</string>
-	<key>InputMethodServerDelegateClass</key>
-	<string>EmojiInputController</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSBackgroundOnly</key>
