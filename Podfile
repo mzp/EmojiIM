@@ -1,11 +1,14 @@
 platform :osx, '10.11'
 
-target 'EmojiIM' do
+abstract_target 'App' do
   use_frameworks!
   pod 'ReactiveAutomaton', git: 'https://github.com/inamiy/ReactiveAutomaton'
   pod 'ReactiveCocoa'
   pod 'ReactiveSwift'
   pod '※ikemen'
+
+  target 'EmojiIM'
+  target 'UnitTest'
 end
 
 pod 'SwiftLint'
