@@ -1,5 +1,5 @@
 PODS:
-  - SwiftLint (0.21.0)
+  - SwiftLint (0.22.0)
   - ※ikemen (0.2.0)
 
 DEPENDENCIES:
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - ※ikemen
 
 SPEC CHECKSUMS:
-  SwiftLint: 6de8b2d15f43c482bdec2953b8cfd696faa876e8
+  SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
   ※ikemen: c04aecee4293a2b6deb2119f7e67e7a82c6dea06
 
 PODFILE CHECKSUM: 56906637e52d0e0b060109e630c08bab9eac7c35
