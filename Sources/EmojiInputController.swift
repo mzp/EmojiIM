@@ -11,21 +11,28 @@ import InputMethodKit
 
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
+    private var marked: String = ""
+
     // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func inputText(_ string: String!, client sender: Any!) -> Bool {
-        NSLog("EmojiIM: \(string): \(sender)")
+    open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
+        NSLog("handle(\(event)")
 
         guard let client = sender as? IMKTextInput else {
             return false
         }
+        guard let str = event.characters else {
+            return false
+        }
 
-        switch string {
-        case "m":
-            client.insertText("💸", replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
-        case "s":
-            client.insertText("🍣", replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
-        default:
-            client.insertText(string, replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
+        let notFound = NSRange(location: NSNotFound, length: NSNotFound)
+
+        if event.keyCode == 36 {
+            client.setMarkedText("", selectionRange: notFound, replacementRange: notFound)
+            client.insertText(marked, replacementRange: notFound)
+            marked = ""
+        } else {
+            marked += str
+            client.setMarkedText(marked, selectionRange: notFound, replacementRange: notFound)
         }
 
         return true
