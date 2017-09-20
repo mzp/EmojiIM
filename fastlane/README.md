@@ -35,6 +35,11 @@ xcode-select --install
 fastlane mac dev
 ```
 Install input method to local
+### mac test
+```
+fastlane mac test
+```
+Runs all the tests
 
 ----
 
