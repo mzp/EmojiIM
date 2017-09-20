@@ -11,24 +11,38 @@ import InputMethodKit
 
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func inputText(_ string: String!, client sender: Any!) -> Bool {
-        NSLog("EmojiIM: \(string): \(sender)")
+    private let automaton: EmojiAutomaton = EmojiAutomaton()
 
-        guard let client = sender as? IMKTextInput else {
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+        super.init(server: server, delegate: delegate, client: inputClient)
+
+        guard let client = inputClient as? IMKTextInput else {
+            return
+        }
+        automaton.markedText.signal.observeValues { text in
+            let notFound = NSRange(location: NSNotFound, length: NSNotFound)
+            client.setMarkedText(text, selectionRange: notFound, replacementRange: notFound)
+        }
+        automaton.text.observeValues {
+            let notFound = NSRange(location: NSNotFound, length: NSNotFound)
+            client.insertText($0, replacementRange: notFound)
+        }
+    }
+
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
+        NSLog("handle(\(event)")
+
+        if event.keyCode == 36 {
+            return automaton.handle(.enter)
+        } else if event.keyCode == 51 {
+            return automaton.handle(.backspace)
+        } else if let text = event.characters {
+            return automaton.handle(.input(text: text))
+        } else {
             return false
         }
-
-        switch string {
-        case "m":
-            client.insertText("💸", replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
-        case "s":
-            client.insertText("🍣", replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
-        default:
-            client.insertText(string, replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
-        }
-
-        return true
     }
 
     open override func menu() -> NSMenu! {
