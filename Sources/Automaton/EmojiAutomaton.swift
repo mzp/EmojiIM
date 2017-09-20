@@ -24,8 +24,8 @@ public class EmojiAutomaton {
         self.markedText = Property(markedTextProperty)
 
         let mappings: [ActionMapping<InputMethodState, UserInput>] = [
-            /*  Input |   fromState => toState <|> action   */
-            /* --------------------------------------*/
+            /*  Input <|> fromState => toState <|> action */
+            /* -------------------------------------------*/
             UserInput.isInput <|> .normal => .composing <|> {
                 $0.ifInput { markedTextProperty.swap($0) }
             },
