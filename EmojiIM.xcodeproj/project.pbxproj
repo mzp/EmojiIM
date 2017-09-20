@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				130DC5D41F65F91D00BBCB60 /* AppDelegate.swift */,
-				134922DE1F6B33AF000AA483 /* EmojiInputController.swift */,
+				13D040F21F723165008BBC75 /* InputMethodKit */,
 				137BAFFE1F71338600D67EAB /* Automaton */,
 			);
 			path = Sources;
@@ -168,6 +168,14 @@
 				137BAFF91F710A2400D67EAB /* AutomatonTest.swift */,
 			);
 			path = Automaton;
+			sourceTree = "<group>";
+		};
+		13D040F21F723165008BBC75 /* InputMethodKit */ = {
+			isa = PBXGroup;
+			children = (
+				134922DE1F6B33AF000AA483 /* EmojiInputController.swift */,
+			);
+			path = InputMethodKit;
 			sourceTree = "<group>";
 		};
 		F689B6872D78223F1561B5E2 /* Pods */ = {

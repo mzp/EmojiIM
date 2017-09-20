@@ -11,31 +11,39 @@ import InputMethodKit
 
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
-    private var marked: String = ""
+    private let automaton: EmojiAutomaton = EmojiAutomaton()
+
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+        super.init(server: server, delegate: delegate, client: inputClient)
+
+        guard let client = inputClient as? IMKTextInput else {
+            return
+        }
+        automaton.markedText.signal.observeValues { text in
+            guard let text = text else {
+                return
+            }
+            let notFound = NSRange(location: NSNotFound, length: NSNotFound)
+            client.setMarkedText(text, selectionRange: notFound, replacementRange: notFound)
+        }
+        automaton.text.observeValues {
+            let notFound = NSRange(location: NSNotFound, length: NSNotFound)
+            client.insertText($0, replacementRange: notFound)
+        }
+    }
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
         NSLog("handle(\(event)")
 
-        guard let client = sender as? IMKTextInput else {
-            return false
-        }
-        guard let str = event.characters else {
-            return false
-        }
-
-        let notFound = NSRange(location: NSNotFound, length: NSNotFound)
-
         if event.keyCode == 36 {
-            client.setMarkedText("", selectionRange: notFound, replacementRange: notFound)
-            client.insertText(marked, replacementRange: notFound)
-            marked = ""
+            return automaton.handle(.enter)
+        } else if let text = event.characters {
+            return automaton.handle(.input(text: text))
         } else {
-            marked += str
-            client.setMarkedText(marked, selectionRange: notFound, replacementRange: notFound)
+            return false
         }
-
-        return true
     }
 
     open override func menu() -> NSMenu! {
