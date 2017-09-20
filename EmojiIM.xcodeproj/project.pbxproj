@@ -14,6 +14,15 @@
 		134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
 		13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13BE30431F731F7B001D3AF8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30421F731F7B001D3AF8 /* Tests.swift */; };
+		13BE305B1F7325C8001D3AF8 /* EmojiAutomaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */; };
+		13BE305C1F7325C9001D3AF8 /* EmojiAutomaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */; };
+		13BE305D1F7325CC001D3AF8 /* InputMethodState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30581F7325BA001D3AF8 /* InputMethodState.swift */; };
+		13BE305E1F7325CC001D3AF8 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30591F7325BA001D3AF8 /* UserInput.swift */; };
+		13BE305F1F7325CD001D3AF8 /* InputMethodState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30581F7325BA001D3AF8 /* InputMethodState.swift */; };
+		13BE30601F7325CD001D3AF8 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30591F7325BA001D3AF8 /* UserInput.swift */; };
+		13BE30631F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
+		13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
+		13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */; };
 		5E7D0D81BC08254996EC1B33 /* Pods_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */; };
 		62C3338358EABF73DAE424C3 /* Pods_App_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +52,10 @@
 		13BE30421F731F7B001D3AF8 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		13BE30441F731F7B001D3AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactiveAutomaton+Action.swift"; sourceTree = "<group>"; };
+		13BE30581F7325BA001D3AF8 /* InputMethodState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMethodState.swift; sourceTree = "<group>"; };
+		13BE30591F7325BA001D3AF8 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
+		13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAutomaton.swift; sourceTree = "<group>"; };
+		13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonTest.swift; sourceTree = "<group>"; };
 		2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +132,7 @@
 		13BE30411F731F7B001D3AF8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				13BE30611F7325E6001D3AF8 /* Automaton */,
 				13BE30421F731F7B001D3AF8 /* Tests.swift */,
 				13BE30441F731F7B001D3AF8 /* Info.plist */,
 			);
@@ -137,6 +151,17 @@
 			isa = PBXGroup;
 			children = (
 				13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */,
+				13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */,
+				13BE30581F7325BA001D3AF8 /* InputMethodState.swift */,
+				13BE30591F7325BA001D3AF8 /* UserInput.swift */,
+			);
+			path = Automaton;
+			sourceTree = "<group>";
+		};
+		13BE30611F7325E6001D3AF8 /* Automaton */ = {
+			isa = PBXGroup;
+			children = (
+				13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */,
 			);
 			path = Automaton;
 			sourceTree = "<group>";
@@ -427,8 +452,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				130DC5D51F65F91D00BBCB60 /* AppDelegate.swift in Sources */,
+				13BE305E1F7325CC001D3AF8 /* UserInput.swift in Sources */,
 				13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */,
+				13BE305D1F7325CC001D3AF8 /* InputMethodState.swift in Sources */,
 				134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */,
+				13BE30631F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */,
+				13BE305B1F7325C8001D3AF8 /* EmojiAutomaton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +466,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13BE30431F731F7B001D3AF8 /* Tests.swift in Sources */,
+				13BE30601F7325CD001D3AF8 /* UserInput.swift in Sources */,
+				13BE305C1F7325C9001D3AF8 /* EmojiAutomaton.swift in Sources */,
+				13BE305F1F7325CD001D3AF8 /* InputMethodState.swift in Sources */,
+				13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */,
+				13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
