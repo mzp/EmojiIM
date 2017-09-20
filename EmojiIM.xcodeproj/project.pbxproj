@@ -13,8 +13,19 @@
 		134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134922DE1F6B33AF000AA483 /* EmojiInputController.swift */; };
 		134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
 		13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
+		13BE30431F731F7B001D3AF8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30421F731F7B001D3AF8 /* Tests.swift */; };
 		B59FE0B7360D6BD909052453 /* Pods_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13BE30451F731F7B001D3AF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 130DC5C91F65F91D00BBCB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 130DC5D01F65F91D00BBCB60;
+			remoteInfo = EmojiIM;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "InputMethodIcon@2x.tiff"; sourceTree = "<group>"; };
@@ -27,6 +38,9 @@
 		134922DE1F6B33AF000AA483 /* EmojiInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiInputController.swift; sourceTree = "<group>"; };
 		134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InputMethodIcon.tiff; sourceTree = "<group>"; };
 		13B7E6611F6D631F008C528A /* BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
+		13BE30401F731F7B001D3AF8 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13BE30421F731F7B001D3AF8 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		13BE30441F731F7B001D3AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BF5F5E4DF0D797F60588E8 /* Pods-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
 		F6525D0AA323BA4CB2F273D7 /* Pods-EmojiIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.release.xcconfig"; sourceTree = "<group>"; };
@@ -38,6 +52,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59FE0B7360D6BD909052453 /* Pods_EmojiIM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13BE303D1F731F7B001D3AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +78,7 @@
 			children = (
 				13B7E6611F6D631F008C528A /* BuildInfo.swift */,
 				130DC5E21F65F95E00BBCB60 /* Sources */,
+				13BE30411F731F7B001D3AF8 /* Tests */,
 				130DC5D31F65F91D00BBCB60 /* Resources */,
 				130DC5D21F65F91D00BBCB60 /* Products */,
 				F689B6872D78223F1561B5E2 /* Pods */,
@@ -68,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				130DC5D11F65F91D00BBCB60 /* EmojiIM.app */,
+				13BE30401F731F7B001D3AF8 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +115,15 @@
 				134922DE1F6B33AF000AA483 /* EmojiInputController.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		13BE30411F731F7B001D3AF8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				13BE30421F731F7B001D3AF8 /* Tests.swift */,
+				13BE30441F731F7B001D3AF8 /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		F689B6872D78223F1561B5E2 /* Pods */ = {
@@ -128,6 +160,24 @@
 			productReference = 130DC5D11F65F91D00BBCB60 /* EmojiIM.app */;
 			productType = "com.apple.product-type.application";
 		};
+		13BE303F1F731F7B001D3AF8 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13BE30491F731F7B001D3AF8 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				13BE303C1F731F7B001D3AF8 /* Sources */,
+				13BE303D1F731F7B001D3AF8 /* Frameworks */,
+				13BE303E1F731F7B001D3AF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13BE30461F731F7B001D3AF8 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 13BE30401F731F7B001D3AF8 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,6 +197,11 @@
 							};
 						};
 					};
+					13BE303F1F731F7B001D3AF8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 130DC5D01F65F91D00BBCB60;
+					};
 				};
 			};
 			buildConfigurationList = 130DC5CC1F65F91D00BBCB60 /* Build configuration list for PBXProject "EmojiIM" */;
@@ -163,6 +218,7 @@
 			projectRoot = "";
 			targets = (
 				130DC5D01F65F91D00BBCB60 /* EmojiIM */,
+				13BE303F1F731F7B001D3AF8 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -175,6 +231,13 @@
 				134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */,
 				130DC5D71F65F91D00BBCB60 /* Assets.xcassets in Resources */,
 				130DC5DA1F65F91D00BBCB60 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13BE303E1F731F7B001D3AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +336,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		13BE303C1F731F7B001D3AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13BE30431F731F7B001D3AF8 /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13BE30461F731F7B001D3AF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 130DC5D01F65F91D00BBCB60 /* EmojiIM */;
+			targetProxy = 13BE30451F731F7B001D3AF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		130DC5D81F65F91D00BBCB60 /* MainMenu.xib */ = {
@@ -425,6 +504,42 @@
 			};
 			name = Release;
 		};
+		13BE30471F731F7B001D3AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VG2YYSKSHY;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
+			};
+			name = Debug;
+		};
+		13BE30481F731F7B001D3AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VG2YYSKSHY;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +557,15 @@
 			buildConfigurations = (
 				130DC5E01F65F91D00BBCB60 /* Debug */,
 				130DC5E11F65F91D00BBCB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13BE30491F731F7B001D3AF8 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13BE30471F731F7B001D3AF8 /* Debug */,
+				13BE30481F731F7B001D3AF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
