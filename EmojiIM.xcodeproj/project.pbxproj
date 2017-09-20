@@ -14,7 +14,8 @@
 		134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
 		13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13BE30431F731F7B001D3AF8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30421F731F7B001D3AF8 /* Tests.swift */; };
-		B59FE0B7360D6BD909052453 /* Pods_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */; };
+		5E7D0D81BC08254996EC1B33 /* Pods_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */; };
+		62C3338358EABF73DAE424C3 /* Pods_App_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +42,12 @@
 		13BE30401F731F7B001D3AF8 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE30421F731F7B001D3AF8 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		13BE30441F731F7B001D3AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1BF5F5E4DF0D797F60588E8 /* Pods-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
-		F6525D0AA323BA4CB2F273D7 /* Pods-EmojiIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM.release.xcconfig"; sourceTree = "<group>"; };
+		2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
+		A06EE18786E85339F30239C2 /* Pods-App-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.release.xcconfig"; sourceTree = "<group>"; };
+		DDB61C9BCDAD0639BAA71AE3 /* Pods-App-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59FE0B7360D6BD909052453 /* Pods_EmojiIM.framework in Frameworks */,
+				62C3338358EABF73DAE424C3 /* Pods_App_EmojiIM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +63,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7D0D81BC08254996EC1B33 /* Pods_App_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01883907C1BC4F82D160FC2A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9D1689B5C64D102F5B81AA5D /* Pods_EmojiIM.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		130DC5C81F65F91D00BBCB60 = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +78,8 @@
 				13BE30411F731F7B001D3AF8 /* Tests */,
 				130DC5D31F65F91D00BBCB60 /* Resources */,
 				130DC5D21F65F91D00BBCB60 /* Products */,
-				F689B6872D78223F1561B5E2 /* Pods */,
-				01883907C1BC4F82D160FC2A /* Frameworks */,
+				2D2EACD9BFBC3224766BFCB3 /* Pods */,
+				D64E41A34C7490A75ED1353D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,13 +123,24 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		F689B6872D78223F1561B5E2 /* Pods */ = {
+		2D2EACD9BFBC3224766BFCB3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1BF5F5E4DF0D797F60588E8 /* Pods-EmojiIM.debug.xcconfig */,
-				F6525D0AA323BA4CB2F273D7 /* Pods-EmojiIM.release.xcconfig */,
+				6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */,
+				D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */,
+				A06EE18786E85339F30239C2 /* Pods-App-Tests.debug.xcconfig */,
+				DDB61C9BCDAD0639BAA71AE3 /* Pods-App-Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D64E41A34C7490A75ED1353D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */,
+				2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,14 +150,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 130DC5DF1F65F91D00BBCB60 /* Build configuration list for PBXNativeTarget "EmojiIM" */;
 			buildPhases = (
-				82F21B7BB19A1C7B725D6C36 /* [CP] Check Pods Manifest.lock */,
+				68A350217DEEF2B9CFBE52DD /* [CP] Check Pods Manifest.lock */,
 				13B7E6601F6D6288008C528A /* EmbedBuildInfo */,
 				130DC5E31F65FB5A00BBCB60 /* SwiftLint */,
 				130DC5CD1F65F91D00BBCB60 /* Sources */,
 				130DC5CE1F65F91D00BBCB60 /* Frameworks */,
 				130DC5CF1F65F91D00BBCB60 /* Resources */,
-				9A020B32C755D7802F2EE1FC /* [CP] Embed Pods Frameworks */,
-				DD6298181D1BD05F2DE0CD0C /* [CP] Copy Pods Resources */,
+				653CC9549B17E6922B7DC7B8 /* [CP] Embed Pods Frameworks */,
+				75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13BE30491F731F7B001D3AF8 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
+				EC78CF836CE60D31DBDD9ACB /* [CP] Check Pods Manifest.lock */,
 				13BE303C1F731F7B001D3AF8 /* Sources */,
 				13BE303D1F731F7B001D3AF8 /* Frameworks */,
 				13BE303E1F731F7B001D3AF8 /* Resources */,
+				4423F8C02B3FB0B96398F1CE /* [CP] Embed Pods Frameworks */,
+				F08483E8FD3F514435731579 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,7 +283,43 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"let kRevision = \\\"$(git rev-parse HEAD)\\\"\" > BuildInfo.swift\necho \"let kBuiltDate = \\\"$(date)\\\"\" >> BuildInfo.swift";
 		};
-		82F21B7BB19A1C7B725D6C36 /* [CP] Check Pods Manifest.lock */ = {
+		4423F8C02B3FB0B96398F1CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/※ikemen/Ikemen.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ikemen.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		653CC9549B17E6922B7DC7B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/※ikemen/Ikemen.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ikemen.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68A350217DEEF2B9CFBE52DD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,32 +330,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EmojiIM-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-App-EmojiIM-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9A020B32C755D7802F2EE1FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/※ikemen/Ikemen.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ikemen.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD6298181D1BD05F2DE0CD0C /* [CP] Copy Pods Resources */ = {
+		75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,7 +349,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmojiIM/Pods-EmojiIM-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC78CF836CE60D31DBDD9ACB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-App-Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F08483E8FD3F514435731579 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -474,7 +536,7 @@
 		};
 		130DC5E01F65F91D00BBCB60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1BF5F5E4DF0D797F60588E8 /* Pods-EmojiIM.debug.xcconfig */;
+			baseConfigurationReference = 6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
@@ -490,7 +552,7 @@
 		};
 		130DC5E11F65F91D00BBCB60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6525D0AA323BA4CB2F273D7 /* Pods-EmojiIM.release.xcconfig */;
+			baseConfigurationReference = D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
@@ -506,6 +568,7 @@
 		};
 		13BE30471F731F7B001D3AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06EE18786E85339F30239C2 /* Pods-App-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -524,6 +587,7 @@
 		};
 		13BE30481F731F7B001D3AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDB61C9BCDAD0639BAA71AE3 /* Pods-App-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
