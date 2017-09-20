@@ -52,6 +52,13 @@ public func <|> <State, Input> (
     return mapping <|> { (_, _, input) in action(input) }
 }
 
+public func <|> <State, Input> (
+    mapping: ActionMapping<State, Input>,
+    action: @autoclosure @escaping () -> Void
+    ) -> ActionMapping<State, Input> {
+    return mapping <|> { (_, _, input) in action() }
+}
+
 public func reduce<State, Input, Mappings: Sequence>(_ mappings: Mappings) -> Automaton<State, Input>.Mapping
     where Mappings.Iterator.Element == ActionMapping<State, Input> {
     return { fromState, input in

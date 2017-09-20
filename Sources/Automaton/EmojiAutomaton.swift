@@ -14,13 +14,13 @@ public class EmojiAutomaton {
     private let automaton: Automaton<InputMethodState, UserInput>
     private let observer: Signal<UserInput, NoError>.Observer
     let text: Signal<String, NoError>
-    let markedText: Property<String?>
+    let markedText: Property<String>
     private var handled: Bool = false
 
     init() {
         let (text, textObserver) = Signal<String, NoError>.pipe()
         self.text = text
-        let markedTextProperty = MutableProperty<String?>(nil)
+        let markedTextProperty = MutableProperty<String>("")
         self.markedText = Property(markedTextProperty)
 
         let mappings: [ActionMapping<InputMethodState, UserInput>] = [
@@ -31,14 +31,19 @@ public class EmojiAutomaton {
             },
             UserInput.isInput <|> .composing => .composing <|> {
                 $0.ifInput { text in
-                    markedTextProperty.modify { $0?.append(text) }
+                    markedTextProperty.modify { $0.append(text) }
                 }
             },
+            .backspace <|> {
+                    $0 == .composing && (markedTextProperty.value.utf8.count <= 1)
+                } => .normal <|> { _ in
+                    markedTextProperty.swap("")
+                },
+            .backspace <|> .composing  => .composing <|>
+                markedTextProperty.modify { $0.removeLast() },
             .enter <|> .composing => .normal <|> { _ in
-                if let value = markedTextProperty.value {
-                    textObserver.send(value: value)
-                    markedTextProperty.swap(nil)
-                }
+                textObserver.send(value: markedTextProperty.value)
+                markedTextProperty.swap("")
             }
         ]
         let (inputSignal, observer) = Signal<UserInput, NoError>.pipe()

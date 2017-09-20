@@ -21,9 +21,6 @@ open class EmojiInputController: IMKInputController {
             return
         }
         automaton.markedText.signal.observeValues { text in
-            guard let text = text else {
-                return
-            }
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
             client.setMarkedText(text, selectionRange: notFound, replacementRange: notFound)
         }
@@ -39,6 +36,8 @@ open class EmojiInputController: IMKInputController {
 
         if event.keyCode == 36 {
             return automaton.handle(.enter)
+        } else if event.keyCode == 51 {
+            return automaton.handle(.backspace)
         } else if let text = event.characters {
             return automaton.handle(.input(text: text))
         } else {

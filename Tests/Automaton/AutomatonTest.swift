@@ -43,9 +43,21 @@ open class AutomatonTest: XCTestCase {
         _ = automaton.handle(.input(text: "b"))
         XCTAssertEqual(automaton.markedText.value, "ab")
 
+       _ = automaton.handle(.backspace)
+        XCTAssertEqual(automaton.markedText.value, "a")
+
         _ = automaton.handle(.enter)
         XCTAssertEqual(automaton.markedText.value, nil)
-        XCTAssertEqual(text, "ab")
+        XCTAssertEqual(text, "a")
+    }
+
+    open func testBackspaceReturnNormal() {
+        _ = automaton.handle(.input(text: "a"))
+        _ = automaton.handle(.input(text: "a"))
+        _ = automaton.handle(.backspace)
+        XCTAssertEqual(automaton.state.value, .composing)
+        _ = automaton.handle(.backspace)
+        XCTAssertEqual(automaton.state.value, .normal)
     }
 
     open func testHandled() {
