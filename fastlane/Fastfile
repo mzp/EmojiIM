@@ -9,7 +9,7 @@ platform :mac do
   end
 
   desc 'Install input method to local'
-  lane :dev do
+  lane :try do
     input_methods = Pathname.new('~/Library/Input Methods').expand_path
     system 'killall EmojiIM'
     input_methods.join('EmojiIM.app').rmtree rescue nil

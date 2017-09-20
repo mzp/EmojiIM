@@ -7,7 +7,7 @@ EmojiIM input :sushi: when you types any key.
 
 ```
 bundle install
-bundle exec fastlane dev
+bundle exec fastlane try
 ```
 
 After logout/login, EmojiIM appears at input sources of keyboard preferences.

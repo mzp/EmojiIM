@@ -30,9 +30,9 @@ xcode-select --install
 
 # Available Actions
 ## Mac
-### mac dev
+### mac try
 ```
-fastlane mac dev
+fastlane mac try
 ```
 Install input method to local
 ### mac test
