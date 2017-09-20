@@ -54,7 +54,6 @@ extension EmojiInputController /* IMKStateSetting*/ {
         NSLog("deactivateServer\(sender)")
     }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
     open override func setValue(_ value: Any?, forKey key: String) {
         NSLog("setValue(\(value ?? "nil"), forKey: \(key))")
     }
