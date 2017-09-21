@@ -51,10 +51,10 @@ public class EmojiAutomaton {
         self.automaton = Automaton(state: .normal, input: inputSignal, mapping: reduce(mappings))
         self.observer = observer
         observeAction(automaton: automaton, mappings: mappings)
-        automaton.replies.observeValues {
+        automaton.replies.observeValues { [weak self] in
             switch $0 {
             case .success:
-                self.handled = true
+                self?.handled = true
             default:
                 ()
             }

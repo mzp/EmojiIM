@@ -17,6 +17,11 @@ open class AutomatonTest: XCTestCase {
         self.automaton = EmojiAutomaton()
     }
 
+    open func testDeinit() {
+        weak var target = EmojiAutomaton()
+        XCTAssertNil(target)
+    }
+
     open func testTransition() {
         XCTAssertEqual(automaton.state.value, .normal)
 
