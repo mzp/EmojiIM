@@ -12,15 +12,22 @@ import InputMethodKit
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
     private let automaton: EmojiAutomaton = EmojiAutomaton()
+    private let candidates: IMKCandidates
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+        candidates = IMKCandidates(server: server,
+                                   panelType: kIMKSingleColumnScrollingCandidatePanel,
+                                   styleType: kIMKMain)
+
         super.init(server: server, delegate: delegate, client: inputClient)
 
         guard let client = inputClient as? IMKTextInput else {
             return
         }
-        automaton.markedText.signal.observeValues { text in
+        automaton.markedText.signal.observeValues { [weak self] text in
+            self?.candidates.update()
+            self?.candidates.show(kIMKLocateCandidatesBelowHint)
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
             client.setMarkedText(text, selectionRange: notFound, replacementRange: notFound)
         }
@@ -28,6 +35,10 @@ open class EmojiInputController: IMKInputController {
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
             client.insertText($0, replacementRange: notFound)
         }
+    }
+
+    open override func candidates(_ sender: Any!) -> [Any]! {
+        return ["sushi", "🍣", "💸"]
     }
 
     // swiftlint:disable:next implicitly_unwrapped_optional
