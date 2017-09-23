@@ -42,6 +42,8 @@
 	<string>jp.mzp.inputmethod.EmojiIM</string>
 	<key>TISIntendedLanguage</key>
 	<string>ja</string>
+	<key>TISParticipatesInTouchBar</key>
+	<true/>
 	<key>tsInputMethodCharacterRepertoireKey</key>
 	<array>
 		<string>Hira</string>

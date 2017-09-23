@@ -10,24 +10,51 @@ import Ikemen
 import InputMethodKit
 
 @objc(EmojiInputController)
-open class EmojiInputController: IMKInputController {
+open class EmojiInputController: IMKInputController, IMKCandidateControllerDelegate {
+    public func textClient() -> Any! {
+        NSLog("event textClient")
+        return self.client()
+    }
+
+    public func windowType() -> Int64 {
+        NSLog("event widowType")
+        return 0
+    }
+
+    public func displayMethod() -> String! {
+        NSLog("event displayMethod")
+        return "Frequency"
+    }
+
+    public func sortingMethods() -> [Any]! {
+        NSLog("event sortingMethods")
+        return ["Frequency"]
+    }
+
+    public func candidates(forSortingMethod arg1: String!) -> [Any]! {
+        NSLog("event candidates")
+        return ["a", "b"]
+    }
+
     private let automaton: EmojiAutomaton = EmojiAutomaton()
-    private let candidates: IMKCandidates
+    private let touchbar = IMKUICandidateTouchBarController()
+    private let screen = IMKUIWindowBasedCandidateController()
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
-        candidates = IMKCandidates(server: server,
-                                   panelType: kIMKSingleColumnScrollingCandidatePanel,
-                                   styleType: kIMKMain)
-
         super.init(server: server, delegate: delegate, client: inputClient)
-
         guard let client = inputClient as? IMKTextInput else {
-            return
+            return
         }
+
+        let info = IMKUIInformation.shared()
+        info?.touchBarController = touchbar
+        touchbar?.delegate = IMKUICandidateTouchBarOnScreenBridge.shared()
+        info?.visibleOnscreenController = screen
+        screen?.delegate = self
+
         automaton.markedText.signal.observeValues { [weak self] text in
-            self?.candidates.update()
-            self?.candidates.show(kIMKLocateCandidatesBelowHint)
+            self?.screen?.reload(withUpdatingFirstCandidate: true)
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
             client.setMarkedText(text, selectionRange: notFound, replacementRange: notFound)
         }
@@ -37,13 +64,15 @@ open class EmojiInputController: IMKInputController {
         }
     }
 
-    open override func candidates(_ sender: Any!) -> [Any]! {
-        return ["sushi", "🍣", "💸"]
-    }
-
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
-        NSLog("handle(\(event)")
+        NSLog("------")
+        let info = IMKUIInformation.shared()
+        NSLog("%@", "TouchBar \(info?.touchBarController)")
+        NSLog("%@", "TouchBar.delegate \(info?.touchBarController?.delegate)")
+        NSLog("%@", "VisibleScreen \(info?.visibleOnscreenController)")
+        NSLog("%@", "VisibleScreen.delegate \(info?.visibleOnscreenController?.delegate)")
+        NSLog("------")
 
         if event.keyCode == 36 {
             return automaton.handle(.enter)
@@ -61,6 +90,11 @@ open class EmojiInputController: IMKInputController {
             menu.addItem(NSMenuItem(title: kBuiltDate, action: nil, keyEquivalent: ""))
             menu.addItem(NSMenuItem(title: kRevision, action: nil, keyEquivalent: ""))
         }
+    }
+
+    open override func candidates(_ sender: Any!) -> [Any]! {
+        NSLog("event candidates:")
+        return ["d", "e"]
     }
 }
 
