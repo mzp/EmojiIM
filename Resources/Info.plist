@@ -52,5 +52,9 @@
 	</array>
 	<key>tsInputMethodIconFileKey</key>
 	<string>InputMethodIcon.tiff</string>
+	<key>tsInputModePrimaryInScriptKey</key>
+	<false/>
+	<key>tsInputModeScriptKey</key>
+	<string>smJapanese</string>
 </dict>
 </plist>

@@ -12,6 +12,9 @@
 		130DC5DA1F65F91D00BBCB60 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130DC5D81F65F91D00BBCB60 /* MainMenu.xib */; };
 		134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134922DE1F6B33AF000AA483 /* EmojiInputController.swift */; };
 		134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
+		1370209E1F7773BA00339A78 /* emojirow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1370209D1F7773BA00339A78 /* emojirow.m */; };
+		137020A01F7773BA00339A78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1370209F1F7773BA00339A78 /* main.m */; };
+		137020A41F7773BA00339A78 /* emojirow.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 137020991F7773BA00339A78 /* emojirow.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13BE30431F731F7B001D3AF8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30421F731F7B001D3AF8 /* Tests.swift */; };
 		13BE305B1F7325C8001D3AF8 /* EmojiAutomaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */; };
@@ -28,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		137020A21F7773BA00339A78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 130DC5C91F65F91D00BBCB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 137020981F7773BA00339A78;
+			remoteInfo = emojirow;
+		};
 		13BE30451F731F7B001D3AF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 130DC5C91F65F91D00BBCB60 /* Project object */;
@@ -36,6 +46,20 @@
 			remoteInfo = EmojiIM;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		137020A81F7773BA00339A78 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				137020A41F7773BA00339A78 /* emojirow.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "InputMethodIcon@2x.tiff"; sourceTree = "<group>"; };
@@ -48,6 +72,12 @@
 		13296B2B1F73F31600FDB44C /* InputMethodKit+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InputMethodKit+Private.h"; sourceTree = "<group>"; };
 		134922DE1F6B33AF000AA483 /* EmojiInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiInputController.swift; sourceTree = "<group>"; };
 		134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InputMethodIcon.tiff; sourceTree = "<group>"; };
+		137020991F7773BA00339A78 /* emojirow.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = emojirow.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		1370209B1F7773BA00339A78 /* emojirowProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = emojirowProtocol.h; sourceTree = "<group>"; };
+		1370209C1F7773BA00339A78 /* emojirow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = emojirow.h; sourceTree = "<group>"; };
+		1370209D1F7773BA00339A78 /* emojirow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = emojirow.m; sourceTree = "<group>"; };
+		1370209F1F7773BA00339A78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		137020A11F7773BA00339A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13B7E6611F6D631F008C528A /* BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
 		13BE30401F731F7B001D3AF8 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE30421F731F7B001D3AF8 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -74,6 +104,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		137020961F7773BA00339A78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13BE303D1F731F7B001D3AF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,6 +129,7 @@
 				130DC5E21F65F95E00BBCB60 /* Sources */,
 				13BE30411F731F7B001D3AF8 /* Tests */,
 				130DC5D31F65F91D00BBCB60 /* Resources */,
+				1370209A1F7773BA00339A78 /* emojirow */,
 				130DC5D21F65F91D00BBCB60 /* Products */,
 				2D2EACD9BFBC3224766BFCB3 /* Pods */,
 				D64E41A34C7490A75ED1353D /* Frameworks */,
@@ -103,6 +141,7 @@
 			children = (
 				130DC5D11F65F91D00BBCB60 /* EmojiIM.app */,
 				13BE30401F731F7B001D3AF8 /* Tests.xctest */,
+				137020991F7773BA00339A78 /* emojirow.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +168,18 @@
 				13296B2B1F73F31600FDB44C /* InputMethodKit+Private.h */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		1370209A1F7773BA00339A78 /* emojirow */ = {
+			isa = PBXGroup;
+			children = (
+				1370209B1F7773BA00339A78 /* emojirowProtocol.h */,
+				1370209C1F7773BA00339A78 /* emojirow.h */,
+				1370209D1F7773BA00339A78 /* emojirow.m */,
+				1370209F1F7773BA00339A78 /* main.m */,
+				137020A11F7773BA00339A78 /* Info.plist */,
+			);
+			path = emojirow;
 			sourceTree = "<group>";
 		};
 		13BE30411F731F7B001D3AF8 /* Tests */ = {
@@ -203,15 +254,34 @@
 				130DC5CF1F65F91D00BBCB60 /* Resources */,
 				653CC9549B17E6922B7DC7B8 /* [CP] Embed Pods Frameworks */,
 				75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */,
+				137020A81F7773BA00339A78 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				137020A31F7773BA00339A78 /* PBXTargetDependency */,
 			);
 			name = EmojiIM;
 			productName = EmojiIM;
 			productReference = 130DC5D11F65F91D00BBCB60 /* EmojiIM.app */;
 			productType = "com.apple.product-type.application";
+		};
+		137020981F7773BA00339A78 /* emojirow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 137020A71F7773BA00339A78 /* Build configuration list for PBXNativeTarget "emojirow" */;
+			buildPhases = (
+				137020951F7773BA00339A78 /* Sources */,
+				137020961F7773BA00339A78 /* Frameworks */,
+				137020971F7773BA00339A78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = emojirow;
+			productName = emojirow;
+			productReference = 137020991F7773BA00339A78 /* emojirow.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 		13BE303F1F731F7B001D3AF8 /* Tests */ = {
 			isa = PBXNativeTarget;
@@ -249,9 +319,13 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
+					};
+					137020981F7773BA00339A78 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
 					};
 					13BE303F1F731F7B001D3AF8 = {
 						CreatedOnToolsVersion = 9.0;
@@ -275,6 +349,7 @@
 			targets = (
 				130DC5D01F65F91D00BBCB60 /* EmojiIM */,
 				13BE303F1F731F7B001D3AF8 /* Tests */,
+				137020981F7773BA00339A78 /* emojirow */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +362,13 @@
 				134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */,
 				130DC5D71F65F91D00BBCB60 /* Assets.xcassets in Resources */,
 				130DC5DA1F65F91D00BBCB60 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		137020971F7773BA00339A78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +545,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		137020951F7773BA00339A78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137020A01F7773BA00339A78 /* main.m in Sources */,
+				1370209E1F7773BA00339A78 /* emojirow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13BE303C1F731F7B001D3AF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,6 +570,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		137020A31F7773BA00339A78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 137020981F7773BA00339A78 /* emojirow */;
+			targetProxy = 137020A21F7773BA00339A78 /* PBXContainerItemProxy */;
+		};
 		13BE30461F731F7B001D3AF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 130DC5D01F65F91D00BBCB60 /* EmojiIM */;
@@ -609,7 +705,6 @@
 			baseConfigurationReference = 6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
@@ -626,7 +721,6 @@
 			baseConfigurationReference = D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
@@ -635,6 +729,32 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/InputMethodKit+Private.h";
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		137020A51F7773BA00339A78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = emojirow/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.emojirow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		137020A61F7773BA00339A78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = emojirow/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.emojirow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -693,6 +813,15 @@
 			buildConfigurations = (
 				130DC5E01F65F91D00BBCB60 /* Debug */,
 				130DC5E11F65F91D00BBCB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		137020A71F7773BA00339A78 /* Build configuration list for PBXNativeTarget "emojirow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				137020A51F7773BA00339A78 /* Debug */,
+				137020A61F7773BA00339A78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
