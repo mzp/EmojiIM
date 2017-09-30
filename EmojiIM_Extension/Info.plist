@@ -47,5 +47,7 @@
 	<string>EmojiInputSession</string>
 	<key>InputMethodServerControllerClass</key>
 	<string>EmojiInputController</string>
+	<key>IMKExtensionMainInitClass</key>
+	<string>EMIMMainThreadInit</string>
 </dict>
 </plist>

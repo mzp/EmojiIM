@@ -30,6 +30,7 @@
 		13E9EB271F7E49A400497886 /* InputMethodIcon@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */; };
 		13E9EB281F7E49AB00497886 /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
 		13E9EB291F7E4A2D00497886 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
+		13E9EB2B1F7E4BE700497886 /* EMIMMainThreadInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EB2A1F7E4BE700497886 /* EMIMMainThreadInit.swift */; };
 		5E7D0D81BC08254996EC1B33 /* Pods_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */; };
 		62C3338358EABF73DAE424C3 /* Pods_App_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */; };
 		E21F4CBD97124E8FBF44D5EA /* Pods_App_EmojiIM_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802F075032E40CAAFEA4213B /* Pods_App_EmojiIM_Extension.framework */; };
@@ -91,6 +92,7 @@
 		13E9EB151F7DF83000497886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
 		13E9EB171F7DF83000497886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiIM_Extension.entitlements; sourceTree = "<group>"; };
+		13E9EB2A1F7E4BE700497886 /* EMIMMainThreadInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMIMMainThreadInit.swift; sourceTree = "<group>"; };
 		2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				13E9EB141F7DF83000497886 /* ShareViewController.xib */,
 				13E9EB171F7DF83000497886 /* Info.plist */,
 				13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */,
+				13E9EB2A1F7E4BE700497886 /* EMIMMainThreadInit.swift */,
 			);
 			path = EmojiIM_Extension;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				13E9EB131F7DF83000497886 /* ShareViewController.swift in Sources */,
 				13E9EB251F7E499000497886 /* EmojiInputController.swift in Sources */,
 				13E9EB241F7E499000497886 /* UserInput.swift in Sources */,
+				13E9EB2B1F7E4BE700497886 /* EMIMMainThreadInit.swift in Sources */,
 				13E9EB211F7E499000497886 /* ReactiveAutomaton+Action.swift in Sources */,
 				13E9EB291F7E4A2D00497886 /* BuildInfo.swift in Sources */,
 				13E9EB221F7E499000497886 /* EmojiAutomaton.swift in Sources */,
