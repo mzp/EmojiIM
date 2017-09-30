@@ -23,6 +23,10 @@
 		13BE30631F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */; };
+		13E9EB111F7DF83000497886 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EB101F7DF83000497886 /* icon.icns */; };
+		13E9EB131F7DF83000497886 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EB121F7DF83000497886 /* ShareViewController.swift */; };
+		13E9EB161F7DF83000497886 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EB141F7DF83000497886 /* ShareViewController.xib */; };
+		13E9EB1B1F7DF83000497886 /* EmojiIM_Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13E9EB0E1F7DF83000497886 /* EmojiIM_Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5E7D0D81BC08254996EC1B33 /* Pods_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */; };
 		62C3338358EABF73DAE424C3 /* Pods_App_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */; };
 /* End PBXBuildFile section */
@@ -35,7 +39,28 @@
 			remoteGlobalIDString = 130DC5D01F65F91D00BBCB60;
 			remoteInfo = EmojiIM;
 		};
+		13E9EB191F7DF83000497886 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 130DC5C91F65F91D00BBCB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13E9EB0D1F7DF83000497886;
+			remoteInfo = EmojiIM_Extension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		13E9EB1F1F7DF83000497886 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				13E9EB1B1F7DF83000497886 /* EmojiIM_Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "InputMethodIcon@2x.tiff"; sourceTree = "<group>"; };
@@ -56,6 +81,12 @@
 		13BE30591F7325BA001D3AF8 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAutomaton.swift; sourceTree = "<group>"; };
 		13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonTest.swift; sourceTree = "<group>"; };
+		13E9EB0E1F7DF83000497886 /* EmojiIM_Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiIM_Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E9EB101F7DF83000497886 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		13E9EB121F7DF83000497886 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		13E9EB151F7DF83000497886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
+		13E9EB171F7DF83000497886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiIM_Extension.entitlements; sourceTree = "<group>"; };
 		2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +112,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		13E9EB0B1F7DF83000497886 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +129,7 @@
 				130DC5E21F65F95E00BBCB60 /* Sources */,
 				13BE30411F731F7B001D3AF8 /* Tests */,
 				130DC5D31F65F91D00BBCB60 /* Resources */,
+				13E9EB0F1F7DF83000497886 /* EmojiIM_Extension */,
 				130DC5D21F65F91D00BBCB60 /* Products */,
 				2D2EACD9BFBC3224766BFCB3 /* Pods */,
 				D64E41A34C7490A75ED1353D /* Frameworks */,
@@ -102,6 +141,7 @@
 			children = (
 				130DC5D11F65F91D00BBCB60 /* EmojiIM.app */,
 				13BE30401F731F7B001D3AF8 /* Tests.xctest */,
+				13E9EB0E1F7DF83000497886 /* EmojiIM_Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +206,18 @@
 			path = Automaton;
 			sourceTree = "<group>";
 		};
+		13E9EB0F1F7DF83000497886 /* EmojiIM_Extension */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EB101F7DF83000497886 /* icon.icns */,
+				13E9EB121F7DF83000497886 /* ShareViewController.swift */,
+				13E9EB141F7DF83000497886 /* ShareViewController.xib */,
+				13E9EB171F7DF83000497886 /* Info.plist */,
+				13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */,
+			);
+			path = EmojiIM_Extension;
+			sourceTree = "<group>";
+		};
 		2D2EACD9BFBC3224766BFCB3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,10 +253,12 @@
 				130DC5CF1F65F91D00BBCB60 /* Resources */,
 				653CC9549B17E6922B7DC7B8 /* [CP] Embed Pods Frameworks */,
 				75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */,
+				13E9EB1F1F7DF83000497886 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				13E9EB1A1F7DF83000497886 /* PBXTargetDependency */,
 			);
 			name = EmojiIM;
 			productName = EmojiIM;
@@ -232,6 +286,23 @@
 			productReference = 13BE30401F731F7B001D3AF8 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		13E9EB0D1F7DF83000497886 /* EmojiIM_Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13E9EB1C1F7DF83000497886 /* Build configuration list for PBXNativeTarget "EmojiIM_Extension" */;
+			buildPhases = (
+				13E9EB0A1F7DF83000497886 /* Sources */,
+				13E9EB0B1F7DF83000497886 /* Frameworks */,
+				13E9EB0C1F7DF83000497886 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmojiIM_Extension;
+			productName = EmojiIM_Extension;
+			productReference = 13E9EB0E1F7DF83000497886 /* EmojiIM_Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -256,6 +327,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 130DC5D01F65F91D00BBCB60;
 					};
+					13E9EB0D1F7DF83000497886 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 130DC5CC1F65F91D00BBCB60 /* Build configuration list for PBXProject "EmojiIM" */;
@@ -273,6 +348,7 @@
 			targets = (
 				130DC5D01F65F91D00BBCB60 /* EmojiIM */,
 				13BE303F1F731F7B001D3AF8 /* Tests */,
+				13E9EB0D1F7DF83000497886 /* EmojiIM_Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -292,6 +368,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E9EB0C1F7DF83000497886 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E9EB161F7DF83000497886 /* ShareViewController.xib in Resources */,
+				13E9EB111F7DF83000497886 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +559,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		13E9EB0A1F7DF83000497886 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E9EB131F7DF83000497886 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -481,6 +574,11 @@
 			isa = PBXTargetDependency;
 			target = 130DC5D01F65F91D00BBCB60 /* EmojiIM */;
 			targetProxy = 13BE30451F731F7B001D3AF8 /* PBXContainerItemProxy */;
+		};
+		13E9EB1A1F7DF83000497886 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13E9EB0D1F7DF83000497886 /* EmojiIM_Extension */;
+			targetProxy = 13E9EB191F7DF83000497886 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -491,6 +589,14 @@
 				130DC5D91F65F91D00BBCB60 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		13E9EB141F7DF83000497886 /* ShareViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13E9EB151F7DF83000497886 /* Base */,
+			);
+			name = ShareViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -606,13 +712,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -622,13 +729,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -672,6 +780,40 @@
 			};
 			name = Release;
 		};
+		13E9EB1D1F7DF83000497886 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EmojiIM_Extension/EmojiIM_Extension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EmojiIM_Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.mzp.inputmethod.EmojiIM-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		13E9EB1E1F7DF83000497886 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EmojiIM_Extension/EmojiIM_Extension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EmojiIM_Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.mzp.inputmethod.EmojiIM-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -698,6 +840,15 @@
 			buildConfigurations = (
 				13BE30471F731F7B001D3AF8 /* Debug */,
 				13BE30481F731F7B001D3AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13E9EB1C1F7DF83000497886 /* Build configuration list for PBXNativeTarget "EmojiIM_Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E9EB1D1F7DF83000497886 /* Debug */,
+				13E9EB1E1F7DF83000497886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
