@@ -73,6 +73,7 @@
 		130DC5D91F65F91D00BBCB60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		130DC5DB1F65F91D00BBCB60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiIM.entitlements; sourceTree = "<group>"; };
+		132CBBBF1F7E67520068F5FA /* InputMethodKit+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InputMethodKit+Private.h"; sourceTree = "<group>"; };
 		134922DE1F6B33AF000AA483 /* EmojiInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiInputController.swift; sourceTree = "<group>"; };
 		134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InputMethodIcon.tiff; sourceTree = "<group>"; };
 		13B7E6611F6D631F008C528A /* BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
@@ -243,6 +244,7 @@
 				13BE30541F73255D001D3AF8 /* Automaton */,
 				13BE304A1F73222F001D3AF8 /* InputMethodKit */,
 				13E9EB2A1F7E4BE700497886 /* EMIMMainThreadInit.swift */,
+				132CBBBF1F7E67520068F5FA /* InputMethodKit+Private.h */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -855,6 +857,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Extension/InputMethodKit+Private.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -873,6 +876,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Extension/InputMethodKit+Private.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
