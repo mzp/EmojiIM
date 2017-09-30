@@ -14,15 +14,9 @@ private var server: IMKServer?
 @objc(EmojiInputMainThreadInit)
 public class EmojiInputMainThreadInit: NSObject, IMKExtensionMainInit {
     public static func mainThreadIMKInit() {
-        NSLog("%@", "Launch \(#function) \(kBuiltDate)")
+        NSLog("%@", "Launch \(kBuiltDate) \(kRevision)")
         let bundle = Bundle.main
         let name = bundle.infoDictionary?["InputMethodConnectionName"] as? String
-
-        while server == nil  {
-            NSLog("%@", "IMKServer(\(name ?? "unknown"), \(bundle.bundleIdentifier ?? "unknown"))")
-            server = IMKServer(name: name, bundleIdentifier: bundle.bundleIdentifier)
-            NSLog("%@", "=> \(server)")
-            Thread.sleep(forTimeInterval: 10)
-        }
+        server = IMKServer(name: name, bundleIdentifier: bundle.bundleIdentifier)
     }
 }
