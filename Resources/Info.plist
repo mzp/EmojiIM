@@ -20,10 +20,6 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>InputMethodConnectionName</key>
-	<string>EmojiInputSession</string>
-	<key>InputMethodServerControllerClass</key>
-	<string>EmojiInputController</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSBackgroundOnly</key>
@@ -38,17 +34,5 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>TISInputSourceID</key>
-	<string>jp.mzp.inputmethod.EmojiIM</string>
-	<key>TISIntendedLanguage</key>
-	<string>ja</string>
-	<key>tsInputMethodCharacterRepertoireKey</key>
-	<array>
-		<string>Hira</string>
-		<string>Kana</string>
-		<string>Latn</string>
-	</array>
-	<key>tsInputMethodIconFileKey</key>
-	<string>InputMethodIcon.tiff</string>
 </dict>
 </plist>
