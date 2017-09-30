@@ -18,8 +18,6 @@
 		13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */; };
 		13E9EB111F7DF83000497886 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EB101F7DF83000497886 /* icon.icns */; };
-		13E9EB131F7DF83000497886 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EB121F7DF83000497886 /* ShareViewController.swift */; };
-		13E9EB161F7DF83000497886 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EB141F7DF83000497886 /* ShareViewController.xib */; };
 		13E9EB1B1F7DF83000497886 /* EmojiIM_Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13E9EB0E1F7DF83000497886 /* EmojiIM_Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		13E9EB201F7E498F00497886 /* EmojiInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134922DE1F6B33AF000AA483 /* EmojiInputController.swift */; };
 		13E9EB211F7E499000497886 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
@@ -88,8 +86,6 @@
 		13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonTest.swift; sourceTree = "<group>"; };
 		13E9EB0E1F7DF83000497886 /* EmojiIM_Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiIM_Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E9EB101F7DF83000497886 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
-		13E9EB121F7DF83000497886 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		13E9EB151F7DF83000497886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
 		13E9EB171F7DF83000497886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiIM_Extension.entitlements; sourceTree = "<group>"; };
 		13E9EB2A1F7E4BE700497886 /* EMIMMainThreadInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMIMMainThreadInit.swift; sourceTree = "<group>"; };
@@ -220,8 +216,6 @@
 				13BE30541F73255D001D3AF8 /* Automaton */,
 				13BE304A1F73222F001D3AF8 /* InputMethodKit */,
 				13E9EB101F7DF83000497886 /* icon.icns */,
-				13E9EB121F7DF83000497886 /* ShareViewController.swift */,
-				13E9EB141F7DF83000497886 /* ShareViewController.xib */,
 				13E9EB171F7DF83000497886 /* Info.plist */,
 				13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */,
 				13E9EB2A1F7E4BE700497886 /* EMIMMainThreadInit.swift */,
@@ -392,7 +386,6 @@
 			files = (
 				13E9EB271F7E49A400497886 /* InputMethodIcon@2x.tiff in Resources */,
 				13E9EB281F7E49AB00497886 /* InputMethodIcon.tiff in Resources */,
-				13E9EB161F7DF83000497886 /* ShareViewController.xib in Resources */,
 				13E9EB111F7DF83000497886 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,7 +602,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E9EB131F7DF83000497886 /* ShareViewController.swift in Sources */,
 				13E9EB251F7E499000497886 /* EmojiInputController.swift in Sources */,
 				13E9EB241F7E499000497886 /* UserInput.swift in Sources */,
 				13E9EB2B1F7E4BE700497886 /* EMIMMainThreadInit.swift in Sources */,
@@ -642,14 +634,6 @@
 				130DC5D91F65F91D00BBCB60 /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		13E9EB141F7DF83000497886 /* ShareViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13E9EB151F7DF83000497886 /* Base */,
-			);
-			name = ShareViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
