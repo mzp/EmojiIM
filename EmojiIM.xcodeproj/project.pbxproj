@@ -135,7 +135,6 @@
 				130DC5E21F65F95E00BBCB60 /* Sources */,
 				13BE30411F731F7B001D3AF8 /* Tests */,
 				130DC5D31F65F91D00BBCB60 /* Resources */,
-				13E9EB0F1F7DF83000497886 /* EmojiIM_Extension */,
 				130DC5D21F65F91D00BBCB60 /* Products */,
 				2D2EACD9BFBC3224766BFCB3 /* Pods */,
 				D64E41A34C7490A75ED1353D /* Frameworks */,
@@ -155,12 +154,8 @@
 		130DC5D31F65F91D00BBCB60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				130DC5D61F65F91D00BBCB60 /* Assets.xcassets */,
-				130DC5D81F65F91D00BBCB60 /* MainMenu.xib */,
-				130DC5DB1F65F91D00BBCB60 /* Info.plist */,
-				134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */,
-				130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */,
-				130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */,
+				134499F61F7E503E00D29E4E /* Container */,
+				134499F71F7E504500D29E4E /* Extension */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -168,9 +163,41 @@
 		130DC5E21F65F95E00BBCB60 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				130DC5D41F65F91D00BBCB60 /* AppDelegate.swift */,
+				134499F51F7E4FDD00D29E4E /* Container */,
+				13E9EB0F1F7DF83000497886 /* Extension */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		134499F51F7E4FDD00D29E4E /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				130DC5D41F65F91D00BBCB60 /* AppDelegate.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		134499F61F7E503E00D29E4E /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				130DC5D61F65F91D00BBCB60 /* Assets.xcassets */,
+				130DC5D81F65F91D00BBCB60 /* MainMenu.xib */,
+				130DC5DB1F65F91D00BBCB60 /* Info.plist */,
+				130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		134499F71F7E504500D29E4E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EB101F7DF83000497886 /* icon.icns */,
+				13E9EB171F7DF83000497886 /* Info.plist */,
+				13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */,
+				134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */,
+				130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		13BE30411F731F7B001D3AF8 /* Tests */ = {
@@ -210,17 +237,14 @@
 			path = Automaton;
 			sourceTree = "<group>";
 		};
-		13E9EB0F1F7DF83000497886 /* EmojiIM_Extension */ = {
+		13E9EB0F1F7DF83000497886 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				13BE30541F73255D001D3AF8 /* Automaton */,
 				13BE304A1F73222F001D3AF8 /* InputMethodKit */,
-				13E9EB101F7DF83000497886 /* icon.icns */,
-				13E9EB171F7DF83000497886 /* Info.plist */,
-				13E9EB181F7DF83000497886 /* EmojiIM_Extension.entitlements */,
 				13E9EB2A1F7E4BE700497886 /* EMIMMainThreadInit.swift */,
 			);
-			path = EmojiIM_Extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		2D2EACD9BFBC3224766BFCB3 /* Pods */ = {
@@ -751,10 +775,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Container/EmojiIM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = Resources/Container/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -768,10 +792,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Container/EmojiIM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = Resources/Container/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -821,11 +845,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8B590062E50E39AAD0B338A /* Pods-App-EmojiIM_Extension.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = EmojiIM_Extension/EmojiIM_Extension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Extension/EmojiIM_Extension.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = EmojiIM_Extension/Info.plist;
+				INFOPLIST_FILE = Resources/Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
@@ -839,11 +863,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84586F7511FB32E8F4F04827 /* Pods-App-EmojiIM_Extension.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = EmojiIM_Extension/EmojiIM_Extension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Extension/EmojiIM_Extension.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = EmojiIM_Extension/Info.plist;
+				INFOPLIST_FILE = Resources/Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;

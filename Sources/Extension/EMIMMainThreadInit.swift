@@ -10,10 +10,11 @@ import Foundation
 import InputMethodKit
 
 @objc(EMIMMainThreadInit)
-class EMIMMainThreadInit : NSObject {
+public class EMIMMainThreadInit: NSObject {
     private static var server: IMKServer?
 
     static func mainThreadIMKInit() {
+        NSLog("\(#function)")
         self.server = IMKServer(name: "EmojiInputSession", bundleIdentifier: Bundle.main.bundleIdentifier)
     }
 }
