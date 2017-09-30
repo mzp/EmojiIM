@@ -44,7 +44,7 @@
 	<key>tsInputMethodIconFileKey</key>
 	<string>InputMethodIcon.tiff</string>
 	<key>InputMethodConnectionName</key>
-	<string>EmojiInputSession</string>
+	<string>jp_mzp_inputmethod_emojiim</string>
 	<key>InputMethodServerControllerClass</key>
 	<string>EmojiInputController</string>
 	<key>IMKExtensionMainInitClass</key>
