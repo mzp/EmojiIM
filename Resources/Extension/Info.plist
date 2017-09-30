@@ -48,6 +48,6 @@
 	<key>InputMethodServerControllerClass</key>
 	<string>EmojiInputController</string>
 	<key>IMKExtensionMainInitClass</key>
-	<string>EMIMMainThreadInit</string>
+	<string>EmojiInputMainThreadInit</string>
 </dict>
 </plist>
