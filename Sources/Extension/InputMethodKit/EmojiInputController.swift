@@ -12,9 +12,11 @@ import InputMethodKit
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
     private let automaton: EmojiAutomaton = EmojiAutomaton()
+    private let touchBarController: IMKUICandidateTouchBarController = IMKUICandidateTouchBarController()
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+        NSLog("%@", "\(#function)")
         super.init(server: server, delegate: delegate, client: inputClient)
 
         guard let client = inputClient as? IMKTextInput else {
@@ -32,7 +34,15 @@ open class EmojiInputController: IMKInputController {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
-        NSLog("handle(\(event)")
+        NSLog("%@", "\(#function) \(event)")
+
+        guard let c = sender as? IPMDServerClientWrapper else {
+            return true
+        }
+        touchBarController.numberOfSimilarWidthCandidates = 4
+        touchBarController.reload(withUpdatingFirstCandidate: true)
+        c.dismissFunctionRowItemTextInputView()
+        c.presentFunctionRowItemTextInputView()
 
         if event.keyCode == 36 {
             return automaton.handle(.enter)
@@ -51,12 +61,18 @@ open class EmojiInputController: IMKInputController {
             menu.addItem(NSMenuItem(title: kRevision, action: nil, keyEquivalent: ""))
         }
     }
+
+    @objc
+    open func functionRowItemTextInputViewController() -> NSViewController! {
+        NSLog("%@", "\(#function) => \(touchBarController.viewController)")
+        return touchBarController.viewController
+    }
 }
 
 extension EmojiInputController /* IMKStateSetting*/ {
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func activateServer(_ sender: Any!) {
-        NSLog("activateServer\(sender)")
+        touchBarController.delegate = self
         guard let client = sender as? IMKTextInput else {
             return
         }
@@ -70,5 +86,25 @@ extension EmojiInputController /* IMKStateSetting*/ {
 
     open override func setValue(_ value: Any?, forKey key: String) {
         NSLog("setValue(\(value ?? "nil"), forKey: \(key))")
+    }
+}
+
+extension EmojiInputController: IMKUIDelegate {
+    public func candidateData(for controller: IMKUICandidateController) -> IMKCandidateData {
+        NSLog("%@", "\(#function)")
+
+        return IMKCandidateData(array: [
+            make(text: "🍣", annotation: "すし"),
+            make(text: "🦐", annotation: "えび"),
+            make(text: "🦀", annotation: "かに"),
+            make(text: "🍻", annotation: "びーる")
+        ])
+    }
+
+    private func make(text: String, annotation: String) -> IMKCandidateDefinitionUnit {
+        return IMKCandidateDefinitionUnit() ※ {
+            $0.text = text
+            $0.annotation = annotation
+        }
     }
 }
