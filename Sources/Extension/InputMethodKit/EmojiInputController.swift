@@ -12,11 +12,16 @@ import InputMethodKit
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
     private let automaton: EmojiAutomaton = EmojiAutomaton()
-    private let touchBarController: IMKUICandidateTouchBarController = IMKUICandidateTouchBarController()
+    private let touchBarController: IMKUICandidateTouchBarController?
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
         NSLog("%@", "\(#function)")
+        if IMKUIInformation.isTouchBarAvailable() {
+            self.touchBarController = IMKUICandidateTouchBarController()
+        } else {
+            self.touchBarController = nil
+        }
         super.init(server: server, delegate: delegate, client: inputClient)
 
         guard let client = inputClient as? IMKTextInput else {
@@ -39,10 +44,12 @@ open class EmojiInputController: IMKInputController {
         guard let c = sender as? IPMDServerClientWrapper else {
             return true
         }
-        touchBarController.numberOfSimilarWidthCandidates = 4
-        touchBarController.reload(withUpdatingFirstCandidate: true)
-        c.dismissFunctionRowItemTextInputView()
-        c.presentFunctionRowItemTextInputView()
+        if let touchBarController = touchBarController {
+            touchBarController.numberOfSimilarWidthCandidates = 4
+            touchBarController.reload(withUpdatingFirstCandidate: true)
+            c.dismissFunctionRowItemTextInputView()
+            c.presentFunctionRowItemTextInputView()
+        }
 
         if event.keyCode == 36 {
             return automaton.handle(.enter)
@@ -64,15 +71,15 @@ open class EmojiInputController: IMKInputController {
 
     @objc
     open func functionRowItemTextInputViewController() -> NSViewController! {
-        NSLog("%@", "\(#function) => \(touchBarController.viewController)")
-        return touchBarController.viewController
+        NSLog("%@", "\(#function)")
+        return touchBarController?.viewController
     }
 }
 
 extension EmojiInputController /* IMKStateSetting*/ {
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func activateServer(_ sender: Any!) {
-        touchBarController.delegate = self
+        touchBarController?.delegate = self
         guard let client = sender as? IMKTextInput else {
             return
         }
