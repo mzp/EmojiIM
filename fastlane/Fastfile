@@ -13,7 +13,7 @@ platform :mac do
     system 'rm -rf ../Build/EmojiIM.app'
     gym
 
-    input_methods = Pathname.new('/Library/Input Methods/EmojiIM.app')
+    input_methods = Pathname.new('/Library/Input Methods')
     target = input_methods.join('EmojiIM.app')
     system <<-SHELL
     sudo rm -rf '#{target}'
