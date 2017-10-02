@@ -8,9 +8,11 @@
 
 #ifndef InputMethodKit_Private_h
 #define InputMethodKit_Private_h
+#import <Foundation/Foundation.h>
 
-@protocol IMKExtensionMainInit
-+ (void)mainThreadIMKInit;
+@protocol IMKExtensionDelegate <NSObject>
+- (void)extensionWillTerminate;
+- (void)extensionDidLaunch;
 @end
 
 #endif /* InputMethodKit_Private_h */
