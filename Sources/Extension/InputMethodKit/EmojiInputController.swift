@@ -11,9 +11,8 @@ import InputMethodKit
 
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
-    private let automaton: EmojiAutomaton = EmojiAutomaton()
+/*    private let automaton: EmojiAutomaton = EmojiAutomaton()
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
     public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
         super.init(server: server, delegate: delegate, client: inputClient)
 
@@ -30,7 +29,6 @@ open class EmojiInputController: IMKInputController {
         }
     }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
     open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
         NSLog("handle(\(event)")
 
@@ -50,11 +48,11 @@ open class EmojiInputController: IMKInputController {
             menu.addItem(NSMenuItem(title: kBuiltDate, action: nil, keyEquivalent: ""))
             menu.addItem(NSMenuItem(title: kRevision, action: nil, keyEquivalent: ""))
         }
-    }
+    }*/
 }
 
+/*
 extension EmojiInputController /* IMKStateSetting*/ {
-    // swiftlint:disable:next implicitly_unwrapped_optional
     open override func activateServer(_ sender: Any!) {
         NSLog("activateServer\(sender)")
         guard let client = sender as? IMKTextInput else {
@@ -63,7 +61,6 @@ extension EmojiInputController /* IMKStateSetting*/ {
         client.overrideKeyboard(withKeyboardNamed: "com.apple.keylayout.US")
     }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
     open override func deactivateServer(_ sender: Any!) {
         NSLog("deactivateServer\(sender)")
     }
@@ -72,3 +69,4 @@ extension EmojiInputController /* IMKStateSetting*/ {
         NSLog("setValue(\(value ?? "nil"), forKey: \(key))")
     }
 }
+*/

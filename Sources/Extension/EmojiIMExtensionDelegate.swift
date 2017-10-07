@@ -15,9 +15,9 @@ private var server: IMKServer?
 public class EmojiIMExtensionDelegate: NSObject, IMKExtensionDelegate {
     public func extensionDidLaunch() {
         NSLog("%@", "Launch \(kBuiltDate) \(kRevision)")
-        let bundle = Bundle.main
-        let name = bundle.infoDictionary?["InputMethodConnectionName"] as? String
-        server = IMKServer(name: name, bundleIdentifier: bundle.bundleIdentifier)
+//        let bundle = Bundle.main
+//        let name = bundle.infoDictionary?["InputMethodConnectionName"] as? String
+//        server = IMKServer(name: name, bundleIdentifier: bundle.bundleIdentifier)
     }
 
     public func extensionWillTerminate() {

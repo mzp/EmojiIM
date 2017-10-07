@@ -32,13 +32,11 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2017 mzp. All rights reserved.</string>
 	<key>TISInputSourceID</key>
-	<string>jp.mzp.inputmethod.EmojiIM</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>TISIntendedLanguage</key>
 	<string>ja</string>
 	<key>tsInputMethodCharacterRepertoireKey</key>
 	<array>
-		<string>Hira</string>
-		<string>Kana</string>
 		<string>Latn</string>
 	</array>
 	<key>tsInputMethodIconFileKey</key>
@@ -49,5 +47,47 @@
 	<string>EmojiInputController</string>
 	<key>IMKExtensionDelegateClass</key>
 	<string>EmojiIMExtensionDelegate</string>
+	<key>ComponentInputModeDict</key>
+	<dict>
+		<key>tsInputModeListKey</key>
+		<dict>
+			<key>com.apple.inputmethod.Japanese</key>
+			<dict>
+				<key>TISIconLabels</key>
+				<dict>
+					<key>Primary</key>
+					<string>あ</string>
+				</dict>
+				<key>TISInputSourceID</key>
+				<string>jp.mzp.inputmethod.EmojiIM.code</string>
+				<key>TISIntendedLanguage</key>
+				<string>ja</string>
+				<key>TISParticipatesInTouchBar</key>
+				<true/>
+				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+				<key>tsInputModeIsVisibleKey</key>
+				<true/>
+				<key>tsInputModeJISKeyboardShortcutKey</key>
+				<integer>1</integer>
+				<key>tsInputModeMenuIconFileKey</key>
+				<string>InputMethodIcon.tiff</string>
+				<key>tsInputModePrimaryInScriptKey</key>
+				<true/>
+				<key>tsInputModeScriptKey</key>
+				<string>smUnicode</string>
+			</dict>
+		</dict>
+		<key>tsVisibleInputModeOrderedArrayKey</key>
+		<array>
+			<string>com.apple.inputmethod.Japanese</string>
+		</array>
+	</dict>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSSupportsSuddenTermination</key>
+	<true/>
+	<key>LSUIElement</key>
+	<true/>
 </dict>
 </plist>
