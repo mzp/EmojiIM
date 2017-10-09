@@ -1,2 +1,3 @@
 workspace 'EmojiIM.xcworkspace'
 scheme 'EmojiIM'
+configuration 'Release'
