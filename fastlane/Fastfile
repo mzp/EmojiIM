@@ -10,12 +10,17 @@ platform :mac do
 
   desc 'Install input method to local'
   lane :try do
-    input_methods = Pathname.new('~/Library/Input Methods').expand_path
-    system 'killall EmojiIM'
-    input_methods.join('EmojiIM.app').rmtree rescue nil
-    input_methods.join('EmojiIM.app.dSYM.zip').rmtree rescue nil
-    gym(output_directory: input_methods.to_s)
-    system 'killall EmojiIM'
+    system 'rm -rf ../Build/EmojiIM.app'
+    gym
+
+    input_methods = Pathname.new('/Library/Input Methods')
+    target = input_methods.join('EmojiIM.app')
+    system <<-SHELL
+    sudo rm -rf '#{target}'
+    sudo cp -r ../Build/EmojiIM.app '#{input_methods}'
+    sudo pluginkit -v -a '#{target.join('Contents', 'PlugIns', 'EmojiIM_Extension.appex')}'
+    sudo killall -9 EmojiIM_Extension
+    SHELL
   end
 
   desc 'Runs all the tests'

@@ -9,6 +9,7 @@ abstract_target 'App' do
   pod '※ikemen'
 
   target 'EmojiIM'
+  target 'EmojiIM_Extension'
   target 'Tests'
 end
 
