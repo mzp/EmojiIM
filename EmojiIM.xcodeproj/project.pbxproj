@@ -324,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"let kRevision = \\\"$(git rev-parse HEAD)\\\"\" > BuildInfo.swift\necho \"let kBuiltDate = \\\"$(date)\\\"\" >> BuildInfo.swift";
+			shellScript = fastlane/embed_buildinfo;
 		};
 		4423F8C02B3FB0B96398F1CE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
