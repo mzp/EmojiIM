@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "let kRevision = \"$(git rev-parse HEAD)\"" > $(pwd)/$(git rev-parse --show-cdup)/BuildInfo.swift
+echo "let kBuiltDate = \"$(date)\"" >> $(pwd)/$(git rev-parse --show-cdup)/BuildInfo.swift

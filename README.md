@@ -1,4 +1,7 @@
 # :sushi: EmojiIM: Emoji Input Method for macOS
+
+[![Build Status](https://www.bitrise.io/app/0741e1b8cd1b5086/status.svg?token=79CGJwB83qmYoe5XcqqJbw)](https://www.bitrise.io/app/0741e1b8cd1b5086)
+
 EmojiIM input :sushi: when you types any key.
 
 ![](/docs/sushi.gif)
