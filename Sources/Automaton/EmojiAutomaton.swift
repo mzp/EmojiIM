@@ -15,6 +15,8 @@ public class EmojiAutomaton {
     private let observer: Signal<UserInput, NoError>.Observer
     let text: Signal<String, NoError>
     let markedText: Property<String>
+    let candidates: Property<[String]>
+
     private var handled: Bool = false
 
     init() {
@@ -22,6 +24,9 @@ public class EmojiAutomaton {
         self.text = text
         let markedTextProperty = MutableProperty<String>("")
         self.markedText = Property(markedTextProperty)
+
+        let candidatesProperty = MutableProperty<[String]>([])
+        self.candidates = Property(candidatesProperty)
 
         let mappings: [ActionMapping<InputMethodState, UserInput>] = [
             /*  Input <|> fromState => toState <|> action */

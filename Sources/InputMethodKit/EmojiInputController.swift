@@ -12,9 +12,11 @@ import InputMethodKit
 @objc(EmojiInputController)
 open class EmojiInputController: IMKInputController {
     private let automaton: EmojiAutomaton = EmojiAutomaton()
+    private let candidates: IMKCandidates
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+        self.candidates = IMKCandidates(server: server, panelType: kIMKMain)
         super.init(server: server, delegate: delegate, client: inputClient)
 
         guard let client = inputClient as? IMKTextInput else {
@@ -27,6 +29,14 @@ open class EmojiInputController: IMKInputController {
         automaton.text.observeValues {
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
             client.insertText($0, replacementRange: notFound)
+        }
+        automaton.candidates.signal.observeValues {
+            if $0.isEmpty {
+                self.candidates.hide()
+            } else {
+                self.candidates.update()
+                self.candidates.show(kIMKLocateCandidatesBelowHint)
+            }
         }
     }
 
@@ -61,6 +71,7 @@ extension EmojiInputController /* IMKStateSetting*/ {
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func activateServer(_ sender: Any!) {
         NSLog("activateServer\(sender)")
+
         guard let client = sender as? IMKTextInput else {
             return
         }
@@ -70,9 +81,27 @@ extension EmojiInputController /* IMKStateSetting*/ {
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func deactivateServer(_ sender: Any!) {
         NSLog("deactivateServer\(sender)")
+        self.candidates.hide()
     }
 
     open override func setValue(_ value: Any?, forKey key: String) {
         NSLog("setValue(\(value ?? "nil"), forKey: \(key))")
+    }
+}
+
+extension EmojiInputController {
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    open override func candidates(_ sender: Any!) -> [Any] {
+        return automaton.candidates.value
+    }
+
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    open override func candidateSelected(_ candidateString: NSAttributedString!) {
+        NSLog("%@", "\(#function)")
+    }
+
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    open override func candidateSelectionChanged(_ candidateString: NSAttributedString!) {
+        NSLog("%@", "\(#function)")
     }
 }
