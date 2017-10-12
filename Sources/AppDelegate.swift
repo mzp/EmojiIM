@@ -18,7 +18,9 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSLog("EmojiIM launching: \(kBuiltDate)(\(kRevision))")
-        server = IMKServer(name: "EmojiInputSession", bundleIdentifier: Bundle.main.bundleIdentifier)
+        let bundle = Bundle.main
+        server = IMKServer(name: bundle.infoDictionary?["InputMethodConnectionName"] as? String,
+                           bundleIdentifier: bundle.bundleIdentifier)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
