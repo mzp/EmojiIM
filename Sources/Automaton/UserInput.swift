@@ -10,6 +10,7 @@ public enum UserInput {
     case input(text: String)
     case backspace
     case enter
+    case colon
 
     static func isInput(_ state: UserInput) -> Bool {
         switch state {
@@ -36,6 +37,8 @@ extension UserInput: Equatable {
         case (.enter, .enter):
             return true
         case (.backspace, .backspace):
+            return true
+        case (.colon, .colon):
             return true
         case (.input(text: let text1), .input(text: let text2)):
             return text1 == text2

@@ -29,6 +29,9 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(automaton.state.value, .normal)
 
         _ = automaton.handle(.input(text: "a"))
+        XCTAssertEqual(automaton.state.value, .normal)
+
+        _ = automaton.handle(.colon)
         XCTAssertEqual(automaton.state.value, .composing)
 
         _ = automaton.handle(.input(text: "b"))
@@ -42,22 +45,22 @@ open class AutomatonTest: XCTestCase {
         var text: String = ""
         automaton.text.observeValues { text.append($0) }
 
-        _ = automaton.handle(.input(text: "a"))
-        XCTAssertEqual(automaton.markedText.value, "a")
+        _ = automaton.handle(.colon)
+        XCTAssertEqual(automaton.markedText.value, ":")
 
-        _ = automaton.handle(.input(text: "b"))
-        XCTAssertEqual(automaton.markedText.value, "ab")
+        _ = automaton.handle(.input(text: "a"))
+        XCTAssertEqual(automaton.markedText.value, ":a")
 
        _ = automaton.handle(.backspace)
-        XCTAssertEqual(automaton.markedText.value, "a")
+        XCTAssertEqual(automaton.markedText.value, ":")
 
         _ = automaton.handle(.enter)
         XCTAssertEqual(automaton.markedText.value, "")
-        XCTAssertEqual(text, "a")
+        XCTAssertEqual(text, ":")
     }
 
     open func testBackspaceReturnNormal() {
-        _ = automaton.handle(.input(text: "a"))
+        _ = automaton.handle(.colon)
         _ = automaton.handle(.input(text: "a"))
         _ = automaton.handle(.backspace)
         XCTAssertEqual(automaton.state.value, .composing)
@@ -66,7 +69,8 @@ open class AutomatonTest: XCTestCase {
     }
 
     open func testHandled() {
-        XCTAssertTrue(automaton.handle(.input(text: "a")))
+        XCTAssertFalse(automaton.handle(.input(text: "a")))
+        XCTAssertTrue(automaton.handle(.colon))
         XCTAssertTrue(automaton.handle(.input(text: "a")))
         XCTAssertTrue(automaton.handle(.enter))
         XCTAssertFalse(automaton.handle(.enter))

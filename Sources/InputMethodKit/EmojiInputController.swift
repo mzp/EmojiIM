@@ -39,7 +39,11 @@ open class EmojiInputController: IMKInputController {
         } else if event.keyCode == 51 {
             return automaton.handle(.backspace)
         } else if let text = event.characters {
-            return automaton.handle(.input(text: text))
+            if text == ":" {
+                return automaton.handle(.colon)
+            } else {
+                return automaton.handle(.input(text: text))
+            }
         } else {
             return false
         }
