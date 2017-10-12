@@ -21,7 +21,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>InputMethodConnectionName</key>
-	<string>EmojiInputSession</string>
+	<string>jp.mzp.inputmethod.EmojiIM_Connection</string>
 	<key>InputMethodServerControllerClass</key>
 	<string>EmojiInputController</string>
 	<key>LSApplicationCategoryType</key>
