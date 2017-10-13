@@ -28,27 +28,33 @@ public class EmojiAutomaton {
         let candidatesProperty = MutableProperty<[String]>([])
         self.candidates = Property(candidatesProperty)
 
+         let dictionary: EmojiDictionary = EmojiDictionary()
+
         let mappings: [ActionMapping<InputMethodState, UserInput>] = [
             /*  Input <|> fromState => toState <|> action */
             /* -------------------------------------------*/
             .colon <|> .normal => .composing <|> { _ in
                 markedTextProperty.swap(":")
+                candidatesProperty.swap([])
             },
             UserInput.isInput <|> .composing => .composing <|> {
                 $0.ifInput { text in
                     markedTextProperty.modify { $0.append(text) }
+                    candidatesProperty.swap(dictionary.find(prefix: text))
                 }
             },
             .backspace <|> {
                     $0 == .composing && (markedTextProperty.value.utf8.count <= 1)
                 } => .normal <|> { _ in
                     markedTextProperty.swap("")
+                    candidatesProperty.swap([])
                 },
             .backspace <|> .composing  => .composing <|>
                 markedTextProperty.modify { $0.removeLast() },
             .enter <|> .composing => .normal <|> { _ in
                 textObserver.send(value: markedTextProperty.value)
                 markedTextProperty.swap("")
+                candidatesProperty.swap([])
             }
         ]
         let (inputSignal, observer) = Signal<UserInput, NoError>.pipe()

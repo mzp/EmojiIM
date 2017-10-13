@@ -59,6 +59,17 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(text, ":")
     }
 
+    open func testCandidates() {
+        _ = automaton.handle(.colon)
+        XCTAssertEqual(automaton.candidates.value, [])
+
+        _ = automaton.handle(.input(text: "s"))
+        XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
+
+        _ = automaton.handle(.enter)
+        XCTAssertEqual(automaton.candidates.value, [])
+    }
+
     open func testBackspaceReturnNormal() {
         _ = automaton.handle(.colon)
         _ = automaton.handle(.input(text: "a"))
