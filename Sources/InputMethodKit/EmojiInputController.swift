@@ -44,6 +44,9 @@ open class EmojiInputController: IMKInputController {
                 self.candidates.show(kIMKLocateCandidatesBelowHint)
             }
         }
+        automaton.candidateEvent.observeValues {
+            self.candidates.interpretKeyEvents([$0])
+        }
     }
 
     // swiftlint:disable:next implicitly_unwrapped_optional
@@ -113,6 +116,9 @@ extension EmojiInputController {
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func candidateSelected(_ candidateString: NSAttributedString!) {
         NSLog("%@", "\(#function)")
+        DispatchQueue.main.async {
+            _ = self.automaton.handle(UserInput(eventType: .selected(candidate: candidateString.string)))
+        }
     }
 
     // swiftlint:disable:next implicitly_unwrapped_optional
