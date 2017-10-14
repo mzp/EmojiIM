@@ -41,7 +41,7 @@ open class EmojiInputController: IMKInputController {
                 self.candidates.hide()
             } else {
                 self.candidates.update()
-                self.candidates.show(kIMKLocateCandidatesBelowHint)
+                self.candidates.show()
             }
         }
         automaton.candidateEvent.observeValues {
