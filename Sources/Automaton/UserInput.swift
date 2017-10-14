@@ -14,6 +14,7 @@ public class UserInput {
         case enter
         case colon
         case other
+        case selected(candidate: String)
     }
     let eventType: EventType
     let originalEvent: NSEvent?
@@ -32,10 +33,28 @@ public class UserInput {
         }
     }
 
+    static func isSelected(_ state: UserInput) -> Bool {
+        switch state.eventType {
+        case .selected:
+            return true
+        default:
+            return false
+        }
+    }
+
     func ifInput(action: (String) -> Void) {
         switch self.eventType {
         case .input(text: let text):
             action(text)
+        default:
+            ()
+        }
+    }
+
+    func ifSelected(action: (String) -> Void) {
+        switch self.eventType {
+        case .selected(candidate: let candidate):
+            action(candidate)
         default:
             ()
         }
@@ -61,6 +80,8 @@ extension UserInput.EventType: Equatable {
             return text1 == text2
         case (.other, .other):
             return true
+        case (.selected(candidate: let candidate1), .selected(candidate: let candidate2)):
+            return candidate1 == candidate2
         default:
             return false
         }

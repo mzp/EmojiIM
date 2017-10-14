@@ -41,6 +41,26 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(automaton.state.value, .normal)
     }
 
+    open func testTransitionSelection() {
+        _ = automaton.handle(UserInput(eventType: .colon))
+        XCTAssertEqual(automaton.state.value, .composing)
+
+        _ = automaton.handle(UserInput(eventType: .input(text: "a")))
+        XCTAssertEqual(automaton.state.value, .composing)
+
+        _ = automaton.handle(UserInput(eventType: .other))
+        XCTAssertEqual(automaton.state.value, .selection)
+
+        _ = automaton.handle(UserInput(eventType: .other))
+        XCTAssertEqual(automaton.state.value, .selection)
+
+        _ = automaton.handle(UserInput(eventType: .enter))
+        XCTAssertEqual(automaton.state.value, .selection)
+
+        _ = automaton.handle(UserInput(eventType: .selected(candidate: "a")))
+        XCTAssertEqual(automaton.state.value, .normal)
+    }
+
     open func testComposing() {
         var text: String = ""
         automaton.text.observeValues { text.append($0) }
@@ -60,14 +80,21 @@ open class AutomatonTest: XCTestCase {
     }
 
     open func testCandidates() {
+        var text: String = ""
+        automaton.text.observeValues { text.append($0) }
+
         _ = automaton.handle(UserInput(eventType: .colon))
         XCTAssertEqual(automaton.candidates.value, [])
 
         _ = automaton.handle(UserInput(eventType: .input(text: "s")))
         XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
 
-        _ = automaton.handle(UserInput(eventType: .enter))
+        _ = automaton.handle(UserInput(eventType: .other))
+        XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
+
+        _ = automaton.handle(UserInput(eventType: .selected(candidate: "🍣")))
         XCTAssertEqual(automaton.candidates.value, [])
+        XCTAssertEqual(text, "🍣")
     }
 
     open func testBackspaceReturnNormal() {
@@ -81,9 +108,11 @@ open class AutomatonTest: XCTestCase {
 
     open func testHandled() {
         XCTAssertFalse(automaton.handle(UserInput(eventType: .input(text: "a"))))
+        XCTAssertFalse(automaton.handle(UserInput(eventType: .other)))
         XCTAssertTrue(automaton.handle(UserInput(eventType: .colon)))
         XCTAssertTrue(automaton.handle(UserInput(eventType: .input(text: "a"))))
-        XCTAssertTrue(automaton.handle(UserInput(eventType: .enter)))
+        XCTAssertTrue(automaton.handle(UserInput(eventType: .other)))
+        XCTAssertTrue(automaton.handle(UserInput(eventType: .selected(candidate: "a"))))
         XCTAssertFalse(automaton.handle(UserInput(eventType: .enter)))
     }
 }

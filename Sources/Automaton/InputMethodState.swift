@@ -9,4 +9,5 @@
 public enum InputMethodState {
     case normal
     case composing
+    case selection
 }

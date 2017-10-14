@@ -16,12 +16,15 @@ public class EmojiAutomaton {
     let text: Signal<String, NoError>
     let markedText: Property<String>
     let candidates: Property<[String]>
+    let candidateEvent: Signal<NSEvent, NoError>
 
     private var handled: Bool = false
 
     init() {
         let (text, textObserver) = Signal<String, NoError>.pipe()
         self.text = text
+        let (candidateEvent, candidateEventObserver) = Signal<NSEvent, NoError>.pipe()
+        self.candidateEvent = candidateEvent
         let markedTextProperty = MutableProperty<String>("")
         self.markedText = Property(markedTextProperty)
 
@@ -55,6 +58,22 @@ public class EmojiAutomaton {
                 textObserver.send(value: markedTextProperty.value)
                 markedTextProperty.swap("")
                 candidatesProperty.swap([])
+            },
+            UserInput.typeof(.other) <|> .composing => .selection  <|> {
+                _ = $0.originalEvent.map {
+                    candidateEventObserver.send(value: $0)
+                }
+            },
+            UserInput.isSelected <|> .selection => .normal <|> {
+                $0.ifSelected {
+                    textObserver.send(value: $0)
+                    markedTextProperty.swap("")
+                    candidatesProperty.swap([])
+                }
+            }, { _ in true } <|> .selection => .selection <|> {
+                _ = $0.originalEvent.map {
+                    candidateEventObserver.send(value: $0)
+                }
             }
         ]
         let (inputSignal, observer) = Signal<UserInput, NoError>.pipe()
