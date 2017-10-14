@@ -33,7 +33,7 @@ public class EmojiAutomaton {
         let mappings: [ActionMapping<InputMethodState, UserInput>] = [
             /*  Input <|> fromState => toState <|> action */
             /* -------------------------------------------*/
-            .colon <|> .normal => .composing <|> { _ in
+            UserInput.typeof(.colon) <|> .normal => .composing <|> { _ in
                 markedTextProperty.swap(":")
                 candidatesProperty.swap([])
             },
@@ -43,15 +43,15 @@ public class EmojiAutomaton {
                     candidatesProperty.swap(dictionary.find(prefix: text))
                 }
             },
-            .backspace <|> {
+            UserInput.typeof(.backspace) <|> {
                     $0 == .composing && (markedTextProperty.value.utf8.count <= 1)
                 } => .normal <|> { _ in
                     markedTextProperty.swap("")
                     candidatesProperty.swap([])
                 },
-            .backspace <|> .composing  => .composing <|>
+            UserInput.typeof(.backspace) <|> .composing  => .composing <|>
                 markedTextProperty.modify { $0.removeLast() },
-            .enter <|> .composing => .normal <|> { _ in
+            UserInput.typeof(.enter) <|> .composing => .normal <|> { _ in
                 textObserver.send(value: markedTextProperty.value)
                 markedTextProperty.swap("")
                 candidatesProperty.swap([])

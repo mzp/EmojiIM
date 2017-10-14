@@ -5,15 +5,25 @@
 //  Created by mzp on 2017/09/19.
 //  Copyright © 2017 mzp. All rights reserved.
 //
+import AppKit
 
-public enum UserInput {
-    case input(text: String)
-    case backspace
-    case enter
-    case colon
+public class UserInput {
+    enum EventType {
+        case input(text: String)
+        case backspace
+        case enter
+        case colon
+    }
+    let eventType: EventType
+    let originalEvent: NSEvent?
+
+    // MARK: - predicate
+    static func typeof(_ eventType: EventType) -> (UserInput) -> Bool {
+        return { $0.eventType == eventType }
+    }
 
     static func isInput(_ state: UserInput) -> Bool {
-        switch state {
+        switch state.eventType {
         case .input:
             return true
         default:
@@ -22,17 +32,23 @@ public enum UserInput {
     }
 
     func ifInput(action: (String) -> Void) {
-        switch self {
+        switch self.eventType {
         case .input(text: let text):
             action(text)
         default:
             ()
         }
     }
+
+    // MARK: - initialize
+    init(eventType: EventType, originalEvent: NSEvent? = nil) {
+        self.eventType = eventType
+        self.originalEvent = originalEvent
+    }
 }
 
-extension UserInput: Equatable {
-    public static func == (lhs: UserInput, rhs: UserInput) -> Bool {
+extension UserInput.EventType: Equatable {
+    public static func == (lhs: UserInput.EventType, rhs: UserInput.EventType) -> Bool {
         switch (lhs, rhs) {
         case (.enter, .enter):
             return true

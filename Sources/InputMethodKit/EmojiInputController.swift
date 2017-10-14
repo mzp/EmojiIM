@@ -44,25 +44,30 @@ open class EmojiInputController: IMKInputController {
     open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
         NSLog("handle(\(event)")
 
-        if event.keyCode == 36 {
-            return automaton.handle(.enter)
-        } else if event.keyCode == 51 {
-            return automaton.handle(.backspace)
-        } else if let text = event.characters {
-            if text == ":" {
-                return automaton.handle(.colon)
-            } else {
-                return automaton.handle(.input(text: text))
-            }
-        } else {
-            return false
-        }
+        return automaton.handle(UserInput(eventType: convert(event: event), originalEvent: event))
     }
 
     open override func menu() -> NSMenu! {
         return NSMenu(title: "EmojiIM") ※ { menu in
             menu.addItem(NSMenuItem(title: kBuiltDate, action: nil, keyEquivalent: ""))
             menu.addItem(NSMenuItem(title: kRevision, action: nil, keyEquivalent: ""))
+        }
+    }
+
+    private func convert(event: NSEvent) -> UserInput.EventType {
+        if event.keyCode == 36 {
+            return .enter
+        } else if event.keyCode == 51 {
+            return .backspace
+        } else if let text = event.characters {
+            switch text {
+            case ":":
+                return .colon
+            default:
+                return .input(text: text)
+            }
+        } else {
+            return .other
         }
     }
 }
