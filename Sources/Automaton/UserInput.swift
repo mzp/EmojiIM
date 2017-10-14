@@ -13,6 +13,7 @@ public class UserInput {
         case backspace
         case enter
         case colon
+        case other
     }
     let eventType: EventType
     let originalEvent: NSEvent?
@@ -58,6 +59,8 @@ extension UserInput.EventType: Equatable {
             return true
         case (.input(text: let text1), .input(text: let text2)):
             return text1 == text2
+        case (.other, .other):
+            return true
         default:
             return false
         }
