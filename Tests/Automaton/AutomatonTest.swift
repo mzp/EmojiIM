@@ -25,16 +25,39 @@ open class AutomatonTest: XCTestCase {
     open func testTransition() {
         XCTAssertEqual(automaton.state.value, .normal)
 
-        _ = automaton.handle(.enter)
+        _ = automaton.handle(UserInput(eventType: .enter))
         XCTAssertEqual(automaton.state.value, .normal)
 
-        _ = automaton.handle(.input(text: "a"))
+        _ = automaton.handle(UserInput(eventType: .input(text: "a")))
+        XCTAssertEqual(automaton.state.value, .normal)
+
+        _ = automaton.handle(UserInput(eventType: .colon))
         XCTAssertEqual(automaton.state.value, .composing)
 
-        _ = automaton.handle(.input(text: "b"))
+        _ = automaton.handle(UserInput(eventType: .input(text: "b")))
         XCTAssertEqual(automaton.state.value, .composing)
 
-        _ = automaton.handle(.enter)
+        _ = automaton.handle(UserInput(eventType: .enter))
+        XCTAssertEqual(automaton.state.value, .normal)
+    }
+
+    open func testTransitionSelection() {
+        _ = automaton.handle(UserInput(eventType: .colon))
+        XCTAssertEqual(automaton.state.value, .composing)
+
+        _ = automaton.handle(UserInput(eventType: .input(text: "a")))
+        XCTAssertEqual(automaton.state.value, .composing)
+
+        _ = automaton.handle(UserInput(eventType: .other))
+        XCTAssertEqual(automaton.state.value, .selection)
+
+        _ = automaton.handle(UserInput(eventType: .other))
+        XCTAssertEqual(automaton.state.value, .selection)
+
+        _ = automaton.handle(UserInput(eventType: .enter))
+        XCTAssertEqual(automaton.state.value, .selection)
+
+        _ = automaton.handle(UserInput(eventType: .selected(candidate: "a")))
         XCTAssertEqual(automaton.state.value, .normal)
     }
 
@@ -42,33 +65,54 @@ open class AutomatonTest: XCTestCase {
         var text: String = ""
         automaton.text.observeValues { text.append($0) }
 
-        _ = automaton.handle(.input(text: "a"))
-        XCTAssertEqual(automaton.markedText.value, "a")
+        _ = automaton.handle(UserInput(eventType: .colon))
+        XCTAssertEqual(automaton.markedText.value, ":")
 
-        _ = automaton.handle(.input(text: "b"))
-        XCTAssertEqual(automaton.markedText.value, "ab")
+        _ = automaton.handle(UserInput(eventType: .input(text: "a")))
+        XCTAssertEqual(automaton.markedText.value, ":a")
 
-       _ = automaton.handle(.backspace)
-        XCTAssertEqual(automaton.markedText.value, "a")
+       _ = automaton.handle(UserInput(eventType: .backspace))
+        XCTAssertEqual(automaton.markedText.value, ":")
 
-        _ = automaton.handle(.enter)
+        _ = automaton.handle(UserInput(eventType: .enter))
         XCTAssertEqual(automaton.markedText.value, "")
-        XCTAssertEqual(text, "a")
+        XCTAssertEqual(text, ":")
+    }
+
+    open func testCandidates() {
+        var text: String = ""
+        automaton.text.observeValues { text.append($0) }
+
+        _ = automaton.handle(UserInput(eventType: .colon))
+        XCTAssertEqual(automaton.candidates.value, [])
+
+        _ = automaton.handle(UserInput(eventType: .input(text: "s")))
+        XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
+
+        _ = automaton.handle(UserInput(eventType: .other))
+        XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
+
+        _ = automaton.handle(UserInput(eventType: .selected(candidate: "🍣")))
+        XCTAssertEqual(automaton.candidates.value, [])
+        XCTAssertEqual(text, "🍣")
     }
 
     open func testBackspaceReturnNormal() {
-        _ = automaton.handle(.input(text: "a"))
-        _ = automaton.handle(.input(text: "a"))
-        _ = automaton.handle(.backspace)
+        _ = automaton.handle(UserInput(eventType: .colon))
+        _ = automaton.handle(UserInput(eventType: .input(text: "a")))
+        _ = automaton.handle(UserInput(eventType: .backspace))
         XCTAssertEqual(automaton.state.value, .composing)
-        _ = automaton.handle(.backspace)
+        _ = automaton.handle(UserInput(eventType: .backspace))
         XCTAssertEqual(automaton.state.value, .normal)
     }
 
     open func testHandled() {
-        XCTAssertTrue(automaton.handle(.input(text: "a")))
-        XCTAssertTrue(automaton.handle(.input(text: "a")))
-        XCTAssertTrue(automaton.handle(.enter))
-        XCTAssertFalse(automaton.handle(.enter))
+        XCTAssertFalse(automaton.handle(UserInput(eventType: .input(text: "a"))))
+        XCTAssertFalse(automaton.handle(UserInput(eventType: .other)))
+        XCTAssertTrue(automaton.handle(UserInput(eventType: .colon)))
+        XCTAssertTrue(automaton.handle(UserInput(eventType: .input(text: "a"))))
+        XCTAssertTrue(automaton.handle(UserInput(eventType: .other)))
+        XCTAssertTrue(automaton.handle(UserInput(eventType: .selected(candidate: "a"))))
+        XCTAssertFalse(automaton.handle(UserInput(eventType: .enter)))
     }
 }
