@@ -10,28 +10,30 @@ import ReactiveAutomaton
 import ReactiveSwift
 import Result
 
-public class EmojiAutomaton {
+internal class EmojiAutomaton {
+    let candidateEvent: Signal<NSEvent, NoError>
+    let candidates: Property<[String]>
+    let markedText: Property<String>
+    let text: Signal<String, NoError>
+
     private let automaton: Automaton<InputMethodState, UserInput>
     private let observer: Signal<UserInput, NoError>.Observer
-    let text: Signal<String, NoError>
-    let markedText: Property<String>
-    let candidates: Property<[String]>
-    let candidateEvent: Signal<NSEvent, NoError>
-
     private var handled: Bool = false
 
     init() {
-        let (text, textObserver) = Signal<String, NoError>.pipe()
-        self.text = text
         let (candidateEvent, candidateEventObserver) = Signal<NSEvent, NoError>.pipe()
         self.candidateEvent = candidateEvent
-        let markedTextProperty = MutableProperty<String>("")
-        self.markedText = Property(markedTextProperty)
 
         let candidatesProperty = MutableProperty<[String]>([])
         self.candidates = Property(candidatesProperty)
 
-         let dictionary: EmojiDictionary = EmojiDictionary()
+        let markedTextProperty = MutableProperty<String>("")
+        self.markedText = Property(markedTextProperty)
+
+        let (text, textObserver) = Signal<String, NoError>.pipe()
+        self.text = text
+
+        let dictionary: EmojiDictionary = EmojiDictionary()
 
         let mappings: [ActionMapping<InputMethodState, UserInput>] = [
             /*  Input <|> fromState => toState <|> action */
@@ -59,7 +61,7 @@ public class EmojiAutomaton {
                 markedTextProperty.swap("")
                 candidatesProperty.swap([])
             },
-            UserInput.typeof(.other) <|> .composing => .selection  <|> {
+            UserInput.typeof(.navigation) <|> .composing => .selection  <|> {
                 _ = $0.originalEvent.map {
                     candidateEventObserver.send(value: $0)
                 }
@@ -67,9 +69,9 @@ public class EmojiAutomaton {
             UserInput.isSelected <|> .selection => .normal <|> {
                 $0.ifSelected {
                     textObserver.send(value: $0)
-                    markedTextProperty.swap("")
-                    candidatesProperty.swap([])
                 }
+                markedTextProperty.swap("")
+                candidatesProperty.swap([])
             }, { _ in true } <|> .selection => .selection <|> {
                 _ = $0.originalEvent.map {
                     candidateEventObserver.send(value: $0)

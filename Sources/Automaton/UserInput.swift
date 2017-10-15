@@ -7,13 +7,13 @@
 //
 import AppKit
 
-public class UserInput {
+internal class UserInput {
     enum EventType {
-        case input(text: String)
         case backspace
-        case enter
         case colon
-        case other
+        case enter
+        case input(text: String)
+        case navigation
         case selected(candidate: String)
     }
     let eventType: EventType
@@ -68,17 +68,17 @@ public class UserInput {
 }
 
 extension UserInput.EventType: Equatable {
-    public static func == (lhs: UserInput.EventType, rhs: UserInput.EventType) -> Bool {
+    static func == (lhs: UserInput.EventType, rhs: UserInput.EventType) -> Bool {
         switch (lhs, rhs) {
-        case (.enter, .enter):
-            return true
         case (.backspace, .backspace):
             return true
         case (.colon, .colon):
             return true
+        case (.enter, .enter):
+            return true
         case (.input(text: let text1), .input(text: let text2)):
             return text1 == text2
-        case (.other, .other):
+        case (.navigation, .navigation):
             return true
         case (.selected(candidate: let candidate1), .selected(candidate: let candidate2)):
             return candidate1 == candidate2

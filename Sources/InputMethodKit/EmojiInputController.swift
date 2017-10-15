@@ -10,27 +10,25 @@ import Ikemen
 import InputMethodKit
 
 @objc(EmojiInputController)
-open class EmojiInputController: IMKInputController {
+internal class EmojiInputController: IMKInputController {
     private let automaton: EmojiAutomaton = EmojiAutomaton()
     private let candidates: IMKCandidates
-    private let printable: CharacterSet
+    private let printable: CharacterSet = [
+        CharacterSet.alphanumerics,
+        CharacterSet.symbols,
+        CharacterSet.punctuationCharacters
+    ].reduce(CharacterSet()) { $0.union($1) }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+    override init!(server: IMKServer, delegate: Any, client inputClient: Any) {
         self.candidates = IMKCandidates(server: server, panelType: kIMKMain)
-        self.printable = [
-            CharacterSet.alphanumerics,
-            CharacterSet.symbols,
-            CharacterSet.punctuationCharacters
-        ].reduce(CharacterSet()) { $0.union($1) }
         super.init(server: server, delegate: delegate, client: inputClient)
 
         guard let client = inputClient as? IMKTextInput else {
             return
         }
-        automaton.markedText.signal.observeValues { text in
+        automaton.markedText.signal.observeValues {
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
-            client.setMarkedText(text, selectionRange: notFound, replacementRange: notFound)
+            client.setMarkedText($0, selectionRange: notFound, replacementRange: notFound)
         }
         automaton.text.observeValues {
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
@@ -49,14 +47,13 @@ open class EmojiInputController: IMKInputController {
         }
     }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
-        NSLog("handle(\(event)")
+    override func handle(_ event: NSEvent, client sender: Any) -> Bool {
+        NSLog("%@", "\(#function)((\(event), client: \(sender))")
 
         return automaton.handle(UserInput(eventType: convert(event: event), originalEvent: event))
     }
 
-    open override func menu() -> NSMenu! {
+    override func menu() -> NSMenu! {
         return NSMenu(title: "EmojiIM") ※ { menu in
             menu.addItem(NSMenuItem(title: kBuiltDate, action: nil, keyEquivalent: ""))
             menu.addItem(NSMenuItem(title: kRevision, action: nil, keyEquivalent: ""))
@@ -73,22 +70,21 @@ open class EmojiInputController: IMKInputController {
             case ":":
                 return .colon
             default:
-                if !text.unicodeScalars.contains { !printable.contains($0) } {
+                if text.unicodeScalars.every(where: printable.contains) {
                     return .input(text: text)
                 } else {
-                    return .other
+                    return .navigation
                 }
             }
         } else {
-            return .other
+            return .navigation
         }
     }
 }
 
 extension EmojiInputController /* IMKStateSetting*/ {
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func activateServer(_ sender: Any!) {
-        NSLog("activateServer\(sender)")
+    override func activateServer(_ sender: Any) {
+        NSLog("%@", "\(#function)((\(sender))")
 
         guard let client = sender as? IMKTextInput else {
             return
@@ -96,33 +92,29 @@ extension EmojiInputController /* IMKStateSetting*/ {
         client.overrideKeyboard(withKeyboardNamed: "com.apple.keylayout.US")
     }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func deactivateServer(_ sender: Any!) {
-        NSLog("deactivateServer\(sender)")
+    override func deactivateServer(_ sender: Any) {
+        NSLog("%@", "\(#function)((\(sender))")
         self.candidates.hide()
     }
 
-    open override func setValue(_ value: Any?, forKey key: String) {
-        NSLog("setValue(\(value ?? "nil"), forKey: \(key))")
+    override func setValue(_ value: Any?, forKey key: String) {
+        NSLog("%@", "\(#function)(\(value ?? "nil"), forKey: \(key))")
     }
 }
 
 extension EmojiInputController {
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func candidates(_ sender: Any!) -> [Any] {
+    override func candidates(_ sender: Any) -> [Any] {
         return automaton.candidates.value
     }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func candidateSelected(_ candidateString: NSAttributedString!) {
+    override func candidateSelected(_ candidateString: NSAttributedString) {
         NSLog("%@", "\(#function)")
         DispatchQueue.main.async {
             _ = self.automaton.handle(UserInput(eventType: .selected(candidate: candidateString.string)))
         }
     }
 
-    // swiftlint:disable:next implicitly_unwrapped_optional
-    open override func candidateSelectionChanged(_ candidateString: NSAttributedString!) {
+    override func candidateSelectionChanged(_ candidateString: NSAttributedString) {
         NSLog("%@", "\(#function)")
     }
 }
