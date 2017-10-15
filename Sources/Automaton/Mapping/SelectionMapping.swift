@@ -15,14 +15,9 @@ internal class SelectionMapping: MappingDefinition {
                 $0.ifSelected {
                     context.text.send(value: $0)
                 }
-                context.markedText.swap("")
-                context.candidates.swap([])
+                context.clear()
             },
-            UserInput.any <|> .selection => .selection <|> {
-                _ = $0.originalEvent.map {
-                    context.candidateEvent.send(value: $0)
-                }
-            }
+            UserInput.any <|> .selection => .selection <|> context.forward
         ]
     }
 }

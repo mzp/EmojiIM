@@ -15,6 +15,17 @@ internal struct MappingContext {
     let dictionary: EmojiDictionary
     let markedText: MutableProperty<String>
     let text: Signal<String, NoError>.Observer
+
+    func clear() {
+        markedText.swap("")
+        candidates.swap([])
+    }
+
+    func forward(userInput: UserInput) {
+        _ = userInput.originalEvent.map {
+            candidateEvent.send(value: $0)
+        }
+    }
 }
 
 internal protocol MappingDefinition {

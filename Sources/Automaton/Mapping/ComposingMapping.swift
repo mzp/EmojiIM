@@ -18,22 +18,14 @@ internal class ComposingMapping: MappingDefinition {
             },
             UserInput.typeof(.backspace) <|> {
                 $0 == .composing && (context.markedText.value.utf8.count <= 1)
-                } => .normal <|> { _ in
-                    context.markedText.swap("")
-                    context.candidates.swap([])
-            },
+            } => .normal <|> context.clear(),
             UserInput.typeof(.backspace) <|> .composing  => .composing <|>
                 context.markedText.modify { $0.removeLast() },
             UserInput.typeof(.enter) <|> .composing => .normal <|> { _ in
                 context.text.send(value: context.markedText.value)
-                context.markedText.swap("")
-                context.candidates.swap([])
+                context.clear()
             },
-            UserInput.typeof(.navigation) <|> .composing => .selection  <|> {
-                _ = $0.originalEvent.map {
-                    context.candidateEvent.send(value: $0)
-                }
-            }
+            UserInput.typeof(.navigation) <|> .composing => .selection  <|> context.forward
         ]
     }
 }
