@@ -26,6 +26,14 @@
 		13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */; };
 		13D45CD01F93090200D4CE5D /* Collection+Every.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CCF1F93090200D4CE5D /* Collection+Every.swift */; };
+		13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
+		13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3871F93450200852AC5 /* MappingDefinition.swift */; };
+		13FFA38A1F93455B00852AC5 /* NormalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3891F93455B00852AC5 /* NormalMapping.swift */; };
+		13FFA38C1F9345BF00852AC5 /* SelectionMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA38B1F9345BF00852AC5 /* SelectionMapping.swift */; };
+		13FFA38D1F93469000852AC5 /* MappingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3871F93450200852AC5 /* MappingDefinition.swift */; };
+		13FFA38E1F93469000852AC5 /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
+		13FFA38F1F93469000852AC5 /* NormalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3891F93455B00852AC5 /* NormalMapping.swift */; };
+		13FFA3901F93469000852AC5 /* SelectionMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA38B1F9345BF00852AC5 /* SelectionMapping.swift */; };
 		5E7D0D81BC08254996EC1B33 /* Pods_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */; };
 		62C3338358EABF73DAE424C3 /* Pods_App_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +69,10 @@
 		13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAutomaton.swift; sourceTree = "<group>"; };
 		13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonTest.swift; sourceTree = "<group>"; };
 		13D45CCF1F93090200D4CE5D /* Collection+Every.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Every.swift"; sourceTree = "<group>"; };
+		13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingMapping.swift; sourceTree = "<group>"; };
+		13FFA3871F93450200852AC5 /* MappingDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingDefinition.swift; sourceTree = "<group>"; };
+		13FFA3891F93455B00852AC5 /* NormalMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMapping.swift; sourceTree = "<group>"; };
+		13FFA38B1F9345BF00852AC5 /* SelectionMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionMapping.swift; sourceTree = "<group>"; };
 		2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +177,7 @@
 		13BE30541F73255D001D3AF8 /* Automaton */ = {
 			isa = PBXGroup;
 			children = (
+				13FFA3861F9344F200852AC5 /* Mapping */,
 				13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */,
 				13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */,
 				13BE30581F7325BA001D3AF8 /* InputMethodState.swift */,
@@ -188,6 +201,17 @@
 			);
 			name = Extension;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		13FFA3861F9344F200852AC5 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				13FFA3871F93450200852AC5 /* MappingDefinition.swift */,
+				13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */,
+				13FFA3891F93455B00852AC5 /* NormalMapping.swift */,
+				13FFA38B1F9345BF00852AC5 /* SelectionMapping.swift */,
+			);
+			path = Mapping;
 			sourceTree = "<group>";
 		};
 		2D2EACD9BFBC3224766BFCB3 /* Pods */ = {
@@ -475,7 +499,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */,
 				130DC5D51F65F91D00BBCB60 /* AppDelegate.swift in Sources */,
+				13FFA38C1F9345BF00852AC5 /* SelectionMapping.swift in Sources */,
+				13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */,
 				13BE305E1F7325CC001D3AF8 /* UserInput.swift in Sources */,
 				136A4CCD1F904CA20020BDBE /* EmojiDictionary.swift in Sources */,
 				13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */,
@@ -484,6 +511,7 @@
 				13BE30631F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */,
 				13D45CD01F93090200D4CE5D /* Collection+Every.swift in Sources */,
 				13BE305B1F7325C8001D3AF8 /* EmojiAutomaton.swift in Sources */,
+				13FFA38A1F93455B00852AC5 /* NormalMapping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +526,10 @@
 				13BE305F1F7325CD001D3AF8 /* InputMethodState.swift in Sources */,
 				13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */,
 				13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */,
+				13FFA38F1F93469000852AC5 /* NormalMapping.swift in Sources */,
+				13FFA38E1F93469000852AC5 /* ComposingMapping.swift in Sources */,
+				13FFA38D1F93469000852AC5 /* MappingDefinition.swift in Sources */,
+				13FFA3901F93469000852AC5 /* SelectionMapping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
