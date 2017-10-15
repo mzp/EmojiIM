@@ -70,7 +70,7 @@ internal class EmojiInputController: IMKInputController {
             case ":":
                 return .colon
             default:
-                if !text.unicodeScalars.contains { !printable.contains($0) } {
+                if text.unicodeScalars.every(where: printable.contains) {
                     return .input(text: text)
                 } else {
                     return .navigation
