@@ -19,6 +19,11 @@ internal class EmojiAutomaton {
     private let automaton: Automaton<InputMethodState, UserInput>
     private let observer: Signal<UserInput, NoError>.Observer
     private var handled: Bool = false
+    private let mappingDefinition: [MappingDefinition] = [
+        ComposingMapping(),
+        NormalMapping(),
+        SelectionMapping()
+    ]
 
     init() {
         let (candidateEvent, candidateEventObserver) = Signal<NSEvent, NoError>.pipe()
@@ -35,51 +40,14 @@ internal class EmojiAutomaton {
 
         let dictionary: EmojiDictionary = EmojiDictionary()
 
-        let mappings: [ActionMapping<InputMethodState, UserInput>] = [
-            /*  Input <|> fromState => toState <|> action */
-            /* -------------------------------------------*/
-            UserInput.typeof(.colon) <|> .normal => .composing <|> { _ in
-                markedTextProperty.swap(":")
-                candidatesProperty.swap([])
-            },
-            UserInput.isInput <|> .composing => .composing <|> {
-                $0.ifInput { text in
-                    markedTextProperty.modify { $0.append(text) }
-                    candidatesProperty.swap(dictionary.find(prefix: text))
-                }
-            },
-            UserInput.typeof(.backspace) <|> {
-                    $0 == .composing && (markedTextProperty.value.utf8.count <= 1)
-                } => .normal <|> { _ in
-                    markedTextProperty.swap("")
-                    candidatesProperty.swap([])
-                },
-            UserInput.typeof(.backspace) <|> .composing  => .composing <|>
-                markedTextProperty.modify { $0.removeLast() },
-            UserInput.typeof(.enter) <|> .composing => .normal <|> { _ in
-                textObserver.send(value: markedTextProperty.value)
-                markedTextProperty.swap("")
-                candidatesProperty.swap([])
-            },
-            UserInput.typeof(.navigation) <|> .composing => .selection  <|> {
-                _ = $0.originalEvent.map {
-                    candidateEventObserver.send(value: $0)
-                }
-            },
-            UserInput.isSelected <|> .selection => .normal <|> {
-                $0.ifSelected {
-                    textObserver.send(value: $0)
-                }
-                markedTextProperty.swap("")
-                candidatesProperty.swap([])
-            }, { _ in true } <|> .selection => .selection <|> {
-                _ = $0.originalEvent.map {
-                    candidateEventObserver.send(value: $0)
-                }
-            }
-        ]
-        let (inputSignal, observer) = Signal<UserInput, NoError>.pipe()
+        let context = MappingContext(candidateEvent: candidateEventObserver,
+                                     candidates: candidatesProperty,
+                                     dictionary: dictionary,
+                                     markedText: markedTextProperty,
+                                     text: textObserver)
+        let mappings = mappingDefinition.flatMap { $0.mapping(context: context) }
 
+        let (inputSignal, observer) = Signal<UserInput, NoError>.pipe()
         self.automaton = Automaton(state: .normal, input: inputSignal, mapping: reduce(mappings))
         self.observer = observer
         observeAction(automaton: automaton, mappings: mappings)
