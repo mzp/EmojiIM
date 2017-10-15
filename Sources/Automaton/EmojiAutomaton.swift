@@ -69,9 +69,9 @@ internal class EmojiAutomaton {
             UserInput.isSelected <|> .selection => .normal <|> {
                 $0.ifSelected {
                     textObserver.send(value: $0)
-                    markedTextProperty.swap("")
-                    candidatesProperty.swap([])
                 }
+                markedTextProperty.swap("")
+                candidatesProperty.swap([])
             }, { _ in true } <|> .selection => .selection <|> {
                 _ = $0.originalEvent.map {
                     candidateEventObserver.send(value: $0)
