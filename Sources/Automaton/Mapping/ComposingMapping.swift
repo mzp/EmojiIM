@@ -13,7 +13,7 @@ internal class ComposingMapping: MappingDefinition {
             UserInput.isInput <|> .composing => .composing <|> {
                 $0.ifInput { text in
                     context.markedText.modify { $0.append(text) }
-                    context.candidates.swap(context.dictionary.find(prefix: text))
+                    context.candidates.swap(context.dictionary.find(prefix: context.markedText.value))
                 }
             },
             UserInput.typeof(.backspace) <|> {
