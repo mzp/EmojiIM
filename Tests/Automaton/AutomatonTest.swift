@@ -48,10 +48,10 @@ open class AutomatonTest: XCTestCase {
         _ = automaton.handle(UserInput(eventType: .input(text: "a")))
         XCTAssertEqual(automaton.state.value, .composing)
 
-        _ = automaton.handle(UserInput(eventType: .other))
+        _ = automaton.handle(UserInput(eventType: .navigation))
         XCTAssertEqual(automaton.state.value, .selection)
 
-        _ = automaton.handle(UserInput(eventType: .other))
+        _ = automaton.handle(UserInput(eventType: .navigation))
         XCTAssertEqual(automaton.state.value, .selection)
 
         _ = automaton.handle(UserInput(eventType: .enter))
@@ -89,7 +89,7 @@ open class AutomatonTest: XCTestCase {
         _ = automaton.handle(UserInput(eventType: .input(text: "s")))
         XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
 
-        _ = automaton.handle(UserInput(eventType: .other))
+        _ = automaton.handle(UserInput(eventType: .navigation))
         XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
 
         _ = automaton.handle(UserInput(eventType: .selected(candidate: "🍣")))
@@ -108,10 +108,10 @@ open class AutomatonTest: XCTestCase {
 
     open func testHandled() {
         XCTAssertFalse(automaton.handle(UserInput(eventType: .input(text: "a"))))
-        XCTAssertFalse(automaton.handle(UserInput(eventType: .other)))
+        XCTAssertFalse(automaton.handle(UserInput(eventType: .navigation)))
         XCTAssertTrue(automaton.handle(UserInput(eventType: .colon)))
         XCTAssertTrue(automaton.handle(UserInput(eventType: .input(text: "a"))))
-        XCTAssertTrue(automaton.handle(UserInput(eventType: .other)))
+        XCTAssertTrue(automaton.handle(UserInput(eventType: .navigation)))
         XCTAssertTrue(automaton.handle(UserInput(eventType: .selected(candidate: "a"))))
         XCTAssertFalse(automaton.handle(UserInput(eventType: .enter)))
     }

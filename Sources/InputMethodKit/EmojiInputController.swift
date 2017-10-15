@@ -76,11 +76,11 @@ open class EmojiInputController: IMKInputController {
                 if !text.unicodeScalars.contains { !printable.contains($0) } {
                     return .input(text: text)
                 } else {
-                    return .other
+                    return .navigation
                 }
             }
         } else {
-            return .other
+            return .navigation
         }
     }
 }

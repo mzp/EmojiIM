@@ -59,7 +59,7 @@ public class EmojiAutomaton {
                 markedTextProperty.swap("")
                 candidatesProperty.swap([])
             },
-            UserInput.typeof(.other) <|> .composing => .selection  <|> {
+            UserInput.typeof(.navigation) <|> .composing => .selection  <|> {
                 _ = $0.originalEvent.map {
                     candidateEventObserver.send(value: $0)
                 }
