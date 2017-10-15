@@ -98,6 +98,7 @@ GEM
       xcpretty-travis-formatter (>= 0.0.3)
     fourflusher (2.0.1)
     fuzzy_match (2.0.4)
+    gemoji (3.0.0)
     gh_inspector (1.0.3)
     google-api-client (0.13.6)
       addressable (~> 2.5, >= 2.5.1)
@@ -188,6 +189,7 @@ PLATFORMS
 DEPENDENCIES
   cocoapods
   fastlane
+  gemoji
   xcode-install
 
 BUNDLED WITH
