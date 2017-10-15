@@ -7,7 +7,7 @@
 //
 import AppKit
 
-public class UserInput {
+internal class UserInput {
     enum EventType {
         case backspace
         case colon
@@ -68,7 +68,7 @@ public class UserInput {
 }
 
 extension UserInput.EventType: Equatable {
-    public static func == (lhs: UserInput.EventType, rhs: UserInput.EventType) -> Bool {
+    static func == (lhs: UserInput.EventType, rhs: UserInput.EventType) -> Bool {
         switch (lhs, rhs) {
         case (.backspace, .backspace):
             return true

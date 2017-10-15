@@ -6,7 +6,7 @@
 //  Copyright © 2017 mzp. All rights reserved.
 //
 
-public enum InputMethodState {
+internal enum InputMethodState {
     case composing
     case normal
     case selection

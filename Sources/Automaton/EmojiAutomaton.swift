@@ -10,7 +10,7 @@ import ReactiveAutomaton
 import ReactiveSwift
 import Result
 
-public class EmojiAutomaton {
+internal class EmojiAutomaton {
     let candidateEvent: Signal<NSEvent, NoError>
     let candidates: Property<[String]>
     let markedText: Property<String>

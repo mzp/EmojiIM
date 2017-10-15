@@ -8,21 +8,21 @@
 
 import XCTest
 
-open class AutomatonTest: XCTestCase {
+internal class AutomatonTest: XCTestCase {
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var automaton: EmojiAutomaton!
 
-    override open func setUp() {
+    override func setUp() {
         super.setUp()
         self.automaton = EmojiAutomaton()
     }
 
-    open func testDeinit() {
+    func testDeinit() {
         weak var target = EmojiAutomaton()
         XCTAssertNil(target)
     }
 
-    open func testTransition() {
+    func testTransition() {
         XCTAssertEqual(automaton.state.value, .normal)
 
         _ = automaton.handle(UserInput(eventType: .enter))
@@ -41,7 +41,7 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(automaton.state.value, .normal)
     }
 
-    open func testTransitionSelection() {
+    func testTransitionSelection() {
         _ = automaton.handle(UserInput(eventType: .colon))
         XCTAssertEqual(automaton.state.value, .composing)
 
@@ -61,7 +61,7 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(automaton.state.value, .normal)
     }
 
-    open func testComposing() {
+    func testComposing() {
         var text: String = ""
         automaton.text.observeValues { text.append($0) }
 
@@ -79,7 +79,7 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(text, ":")
     }
 
-    open func testCandidates() {
+    func testCandidates() {
         var text: String = ""
         automaton.text.observeValues { text.append($0) }
 
@@ -97,7 +97,7 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(text, "🍣")
     }
 
-    open func testBackspaceReturnNormal() {
+    func testBackspaceReturnNormal() {
         _ = automaton.handle(UserInput(eventType: .colon))
         _ = automaton.handle(UserInput(eventType: .input(text: "a")))
         _ = automaton.handle(UserInput(eventType: .backspace))
@@ -106,7 +106,7 @@ open class AutomatonTest: XCTestCase {
         XCTAssertEqual(automaton.state.value, .normal)
     }
 
-    open func testHandled() {
+    func testHandled() {
         XCTAssertFalse(automaton.handle(UserInput(eventType: .input(text: "a"))))
         XCTAssertFalse(automaton.handle(UserInput(eventType: .navigation)))
         XCTAssertTrue(automaton.handle(UserInput(eventType: .colon)))
