@@ -9,10 +9,10 @@ import AppKit
 
 public class UserInput {
     enum EventType {
-        case input(text: String)
         case backspace
-        case enter
         case colon
+        case enter
+        case input(text: String)
         case navigation
         case selected(candidate: String)
     }
@@ -70,11 +70,11 @@ public class UserInput {
 extension UserInput.EventType: Equatable {
     public static func == (lhs: UserInput.EventType, rhs: UserInput.EventType) -> Bool {
         switch (lhs, rhs) {
-        case (.enter, .enter):
-            return true
         case (.backspace, .backspace):
             return true
         case (.colon, .colon):
+            return true
+        case (.enter, .enter):
             return true
         case (.input(text: let text1), .input(text: let text2)):
             return text1 == text2

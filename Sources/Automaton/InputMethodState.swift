@@ -7,7 +7,7 @@
 //
 
 public enum InputMethodState {
-    case normal
     case composing
+    case normal
     case selection
 }
