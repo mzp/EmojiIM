@@ -24,6 +24,10 @@ internal class UserInput {
         return { $0.eventType == eventType }
     }
 
+    static func any(_ state: UserInput) -> Bool {
+        return true
+    }
+
     static func isInput(_ state: UserInput) -> Bool {
         switch state.eventType {
         case .input:
