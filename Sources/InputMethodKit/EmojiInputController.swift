@@ -26,9 +26,9 @@ internal class EmojiInputController: IMKInputController {
         guard let client = inputClient as? IMKTextInput else {
             return
         }
-        automaton.markedText.signal.observeValues { text in
+        automaton.markedText.signal.observeValues {
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
-            client.setMarkedText(text, selectionRange: notFound, replacementRange: notFound)
+            client.setMarkedText($0, selectionRange: notFound, replacementRange: notFound)
         }
         automaton.text.observeValues {
             let notFound = NSRange(location: NSNotFound, length: NSNotFound)
