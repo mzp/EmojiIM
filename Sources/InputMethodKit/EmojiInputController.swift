@@ -50,7 +50,7 @@ open class EmojiInputController: IMKInputController {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
-        NSLog("handle(\(event)")
+        NSLog("%@", "\(#function)((\(event), client: \(sender))")
 
         return automaton.handle(UserInput(eventType: convert(event: event), originalEvent: event))
     }
@@ -87,7 +87,7 @@ open class EmojiInputController: IMKInputController {
 extension EmojiInputController /* IMKStateSetting*/ {
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func activateServer(_ sender: Any!) {
-        NSLog("activateServer\(sender)")
+        NSLog("%@", "\(#function)((\(sender))")
 
         guard let client = sender as? IMKTextInput else {
             return
@@ -97,12 +97,12 @@ extension EmojiInputController /* IMKStateSetting*/ {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     open override func deactivateServer(_ sender: Any!) {
-        NSLog("deactivateServer\(sender)")
+        NSLog("%@", "\(#function)((\(sender))")
         self.candidates.hide()
     }
 
     open override func setValue(_ value: Any?, forKey key: String) {
-        NSLog("setValue(\(value ?? "nil"), forKey: \(key))")
+        NSLog("%@", "\(#function)(\(value ?? "nil"), forKey: \(key))")
     }
 }
 
