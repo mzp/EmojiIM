@@ -14,8 +14,10 @@ internal class EmojiDictionary {
         let emoji: String
     }
     private let entries: [Entry]
+    private let limit: Int
 
-    init() {
+    init(limit: Int = 6) {
+        self.limit = limit
         guard let url = Bundle.main.url(forResource: "EmojiDefinition", withExtension: "json") else {
             fatalError("cannot find Emojidefinition.json")
         }
@@ -28,12 +30,13 @@ internal class EmojiDictionary {
     }
 
     func find(prefix: String) -> [String] {
-        return entries.flatMap {
+        let xs = entries.flatMap {
             if $0.name.starts(with: prefix) {
                 return $0.emoji
             } else {
                 return nil
             }
-        }
+        }.prefix(self.limit)
+        return Array(xs)
     }
 }

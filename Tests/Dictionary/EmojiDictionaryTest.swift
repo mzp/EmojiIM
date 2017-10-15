@@ -19,4 +19,9 @@ internal class EmojiDictionaryTest: XCTestCase {
         XCTAssertTrue(beer.contains("🍺"), "\(beer) doesn't contain 🍺")
         XCTAssertTrue(beer.contains("🍻"), "\(beer) doesn't contain 🍻")
     }
+
+    func testSizeLimit() {
+        let all = dictionary.find(prefix: ":")
+        XCTAssertEqual(all.count, 6)
+    }
 }

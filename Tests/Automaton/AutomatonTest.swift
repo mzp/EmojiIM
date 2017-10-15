@@ -87,6 +87,8 @@ internal class AutomatonTest: XCTestCase {
         XCTAssertEqual(automaton.candidates.value, [])
 
         _ = automaton.handle(UserInput(eventType: .input(text: "s")))
+        _ = automaton.handle(UserInput(eventType: .input(text: "u")))
+        _ = automaton.handle(UserInput(eventType: .input(text: "s")))
         XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
 
         _ = automaton.handle(UserInput(eventType: .input(text: "e")))
