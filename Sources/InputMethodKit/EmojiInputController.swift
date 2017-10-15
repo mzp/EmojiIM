@@ -13,16 +13,15 @@ import InputMethodKit
 open class EmojiInputController: IMKInputController {
     private let automaton: EmojiAutomaton = EmojiAutomaton()
     private let candidates: IMKCandidates
-    private let printable: CharacterSet
+    private let printable: CharacterSet = [
+        CharacterSet.alphanumerics,
+        CharacterSet.symbols,
+        CharacterSet.punctuationCharacters
+    ].reduce(CharacterSet()) { $0.union($1) }
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     public override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
         self.candidates = IMKCandidates(server: server, panelType: kIMKMain)
-        self.printable = [
-            CharacterSet.alphanumerics,
-            CharacterSet.symbols,
-            CharacterSet.punctuationCharacters
-        ].reduce(CharacterSet()) { $0.union($1) }
         super.init(server: server, delegate: delegate, client: inputClient)
 
         guard let client = inputClient as? IMKTextInput else {
