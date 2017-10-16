@@ -47,7 +47,5 @@
 	<string>jp_mzp_inputmethod_emojiim</string>
 	<key>InputMethodServerControllerClass</key>
 	<string>EmojiInputController</string>
-	<key>IMKExtensionMainInitClass</key>
-	<string>EmojiInputMainThreadInit</string>
 </dict>
 </plist>

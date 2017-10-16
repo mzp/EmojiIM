@@ -8,5 +8,14 @@
 	<true/>
 	<key>com.apple.security.temporary-exception.mach-register.global-name</key>
 	<string>jp_mzp_inputmethod_emojiim</string>
+	<key>om.apple.keyboardservices.textreplacement.allow</key>
+	<true/>
+	<key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
+	<array>
+		<string>com.apple.iohideventsystem</string>
+		<string>com.apple.mobileassetd</string>
+		<string>com.apple.CrashReporterSupportHelper</string>
+		<string>com.apple.GSSCred</string>
+	</array>
 </dict>
 </plist>
