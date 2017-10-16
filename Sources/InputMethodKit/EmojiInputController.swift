@@ -116,5 +116,8 @@ extension EmojiInputController {
 
     override func candidateSelectionChanged(_ candidateString: NSAttributedString) {
         NSLog("%@", "\(#function)")
+        DispatchQueue.main.async {
+            _ = self.automaton.handle(UserInput(eventType: .select(candidate: candidateString.string)))
+        }
     }
 }
