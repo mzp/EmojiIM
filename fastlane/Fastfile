@@ -13,11 +13,11 @@ platform :mac do
     system 'rm -rf ../Build/EmojiIM.app'
     gym
 
-    input_methods = Pathname.new('/Library/Input Methods/EmojiIM.app')
+    input_methods = Pathname.new('/Library/Input Methods')
     target = input_methods.join('EmojiIM.app')
     system <<-SHELL
     sudo rm -rf '#{target}'
-    sudo cp -r ../Build/EmojiIM.app '#{input_methods}'
+    sudo cp -RP ../Build/EmojiIM.app '#{input_methods}'
     sudo pluginkit -v -a '#{target.join('Contents', 'PlugIns', 'EmojiIM_Extension.appex')}'
     sudo killall -9 EmojiIM_Extension
     SHELL
