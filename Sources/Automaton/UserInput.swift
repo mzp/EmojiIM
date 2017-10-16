@@ -14,6 +14,7 @@ internal class UserInput {
         case enter
         case input(text: String)
         case navigation
+        case select(candidate: String)
         case selected(candidate: String)
     }
     let eventType: EventType
@@ -37,6 +38,15 @@ internal class UserInput {
         }
     }
 
+    static func isSelect(_ state: UserInput) -> Bool {
+        switch state.eventType {
+        case .select:
+            return true
+        default:
+            return false
+        }
+    }
+
     static func isSelected(_ state: UserInput) -> Bool {
         switch state.eventType {
         case .selected:
@@ -50,6 +60,15 @@ internal class UserInput {
         switch self.eventType {
         case .input(text: let text):
             action(text)
+        default:
+            ()
+        }
+    }
+
+    func ifSelect(action: (String) -> Void) {
+        switch self.eventType {
+        case .select(candidate: let candidate):
+            action(candidate)
         default:
             ()
         }

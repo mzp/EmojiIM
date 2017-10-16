@@ -100,6 +100,9 @@ internal class AutomatonTest: XCTestCase {
         _ = automaton.handle(UserInput(eventType: .navigation))
         XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
 
+        _ = automaton.handle(UserInput(eventType: .select(candidate: "🍣")))
+        XCTAssertEqual(automaton.markedText.value, "🍣")
+
         _ = automaton.handle(UserInput(eventType: .selected(candidate: "🍣")))
         XCTAssertEqual(automaton.candidates.value, [])
         XCTAssertEqual(text, "🍣")

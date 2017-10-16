@@ -17,6 +17,11 @@ internal class SelectionMapping: MappingDefinition {
                 }
                 context.clear()
             },
+            UserInput.isSelect <|> .selection => .selection <|> {
+                $0.ifSelect {
+                    context.markedText.swap($0)
+                }
+            },
             UserInput.any <|> .selection => .selection <|> context.forward
         ]
     }
