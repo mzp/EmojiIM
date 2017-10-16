@@ -13,14 +13,16 @@ internal class ComposingMapping: MappingDefinition {
             UserInput.isInput <|> .composing => .composing <|> {
                 $0.ifInput { text in
                     context.markedText.modify { $0.append(text) }
-                    context.candidates.swap(context.dictionary.find(prefix: text))
+                    context.candidates.swap(context.dictionary.find(prefix: context.markedText.value))
                 }
             },
             UserInput.typeof(.backspace) <|> {
                 $0 == .composing && (context.markedText.value.utf8.count <= 1)
             } => .normal <|> context.clear(),
-            UserInput.typeof(.backspace) <|> .composing  => .composing <|>
-                context.markedText.modify { $0.removeLast() },
+            UserInput.typeof(.backspace) <|> .composing  => .composing <|> { _ in
+                context.markedText.modify { $0.removeLast() }
+                context.candidates.swap(context.dictionary.find(prefix: context.markedText.value))
+            },
             UserInput.typeof(.enter) <|> .composing => .normal <|> { _ in
                 context.text.send(value: context.markedText.value)
                 context.clear()
