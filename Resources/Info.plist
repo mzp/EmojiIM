@@ -50,5 +50,38 @@
 	</array>
 	<key>tsInputMethodIconFileKey</key>
 	<string>InputMethodIcon.tiff</string>
+	<key>ComponentInputModeDict</key>
+	<dict>
+		<key>tsInputModeListKey</key>
+		<dict>
+			<key>jp.mzp.inputmethod.EmojiIM</key>
+			<dict>
+				<key>tsInputModeScriptKey</key>
+				<string>smUnicode</string>
+				<key>tsInputModeMenuIconFileKey</key>
+				<string>InputMethodIcon.tiff</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>InputMethodIcon.tiff</string>
+				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+			</dict>
+			<key>com.apple.inputmethod.Roman</key>
+			<dict>
+				<key>tsInputModeScriptKey</key>
+				<string>smRoman</string>
+				<key>tsInputModeMenuIconFileKey</key>
+				<string>InputMethodIcon.tiff</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>InputMethodIcon.tiff</string>
+				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+			</dict>
+		</dict>
+		<key>tsVisibleInputModeOrderedArrayKey</key>
+		<array>
+			<string>jp.mzp.inputmethod.EmojiIM</string>
+			<string>com.apple.inputmethod.Roman</string>
+		</array>
+	</dict>
 </dict>
 </plist>
