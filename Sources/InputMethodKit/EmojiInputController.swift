@@ -13,6 +13,7 @@ import InputMethodKit
 internal class EmojiInputController: IMKInputController {
     private let automaton: EmojiAutomaton = EmojiAutomaton()
     private let candidates: IMKCandidates
+    private var directMode: Bool = false
     private let printable: CharacterSet = [
         CharacterSet.alphanumerics,
         CharacterSet.symbols,
@@ -49,6 +50,9 @@ internal class EmojiInputController: IMKInputController {
 
     override func handle(_ event: NSEvent, client sender: Any) -> Bool {
         NSLog("%@", "\(#function)((\(event), client: \(sender))")
+        if directMode {
+            return false
+        }
 
         return automaton.handle(UserInput(eventType: convert(event: event), originalEvent: event))
     }
@@ -97,8 +101,16 @@ extension EmojiInputController /* IMKStateSetting*/ {
         self.candidates.hide()
     }
 
-    override func setValue(_ value: Any?, forKey key: String) {
-        NSLog("%@", "\(#function)(\(value ?? "nil"), forKey: \(key))")
+    override func setValue(_ value: Any, forTag tag: Int, client sender: Any) {
+        NSLog("%@", "\(#function)(\(value), forTag: \(tag))")
+        guard let value = value as? NSString else {
+            return
+        }
+        guard let sender = sender as? IMKTextInput else {
+            return
+        }
+        directMode = value == "com.apple.inputmethod.Roman"
+        sender.overrideKeyboard(withKeyboardNamed: "com.apple.keylayout.US")
     }
 }
 
