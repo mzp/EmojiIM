@@ -1,0 +1,5 @@
+CFBundleName = "Emoji IM";
+
+com.apple.inputmethod.Roman = "Emoji(Alphabet)";
+
+jp.mzp.inputmethod.EmojiIM = "Emoji";
