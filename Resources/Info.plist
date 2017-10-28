@@ -52,6 +52,8 @@
 		<dict>
 			<key>jp.mzp.inputmethod.EmojiIM</key>
 			<dict>
+				<key>TISDoubleSpaceSubstitution</key>
+				<string>🍣</string>
 				<key>TISInputSourceID</key>
 				<string>jp.mzp.inputmethod.EmojiIM.emoji</string>
 				<key>TISIntendedLanguage</key>
