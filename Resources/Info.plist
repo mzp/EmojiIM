@@ -48,6 +48,8 @@
 	<string>InputMethodIcon.tiff</string>
 	<key>ComponentInputModeDict</key>
 	<dict>
+		<key>TISUnifiedUIForInputMethodEnabling</key>
+		<true/>
 		<key>tsInputModeListKey</key>
 		<dict>
 			<key>jp.mzp.inputmethod.EmojiIM</key>
@@ -89,5 +91,7 @@
 			<string>com.apple.inputmethod.Roman</string>
 		</array>
 	</dict>
+	<key>TISIntendedLanguage</key>
+	<string>en</string>
 </dict>
 </plist>
