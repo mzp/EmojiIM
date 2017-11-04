@@ -133,14 +133,7 @@
 		130DC5D31F65F91D00BBCB60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				130DC5DB1F65F91D00BBCB60 /* Info.plist */,
-				13A455CF1F9F5D2900F2D3EA /* InfoPlist.strings */,
-				130DC5D61F65F91D00BBCB60 /* Assets.xcassets */,
-				130DC5D81F65F91D00BBCB60 /* MainMenu.xib */,
-				134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */,
-				130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */,
-				130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */,
-				1313B8221F935741004B6A2F /* EmojiDefinition.json */,
+				13AC72171FAD4D1100585E3B /* EmojiIM */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -171,6 +164,21 @@
 				136A4CCC1F904CA20020BDBE /* EmojiDictionary.swift */,
 			);
 			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		13AC72171FAD4D1100585E3B /* EmojiIM */ = {
+			isa = PBXGroup;
+			children = (
+				130DC5DB1F65F91D00BBCB60 /* Info.plist */,
+				13A455CF1F9F5D2900F2D3EA /* InfoPlist.strings */,
+				130DC5D61F65F91D00BBCB60 /* Assets.xcassets */,
+				130DC5D81F65F91D00BBCB60 /* MainMenu.xib */,
+				134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */,
+				130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */,
+				130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */,
+				1313B8221F935741004B6A2F /* EmojiDefinition.json */,
+			);
+			path = EmojiIM;
 			sourceTree = "<group>";
 		};
 		13BE30411F731F7B001D3AF8 /* Tests */ = {
@@ -696,12 +704,12 @@
 			baseConfigurationReference = 6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM/EmojiIM.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VG2YYSKSHY;
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = Resources/EmojiIM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
@@ -716,12 +724,12 @@
 			baseConfigurationReference = D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/EmojiIM/EmojiIM.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VG2YYSKSHY;
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = Resources/EmojiIM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
