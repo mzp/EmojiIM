@@ -21,6 +21,7 @@
 		13AC72221FAD4D7200585E3B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC72211FAD4D7200585E3B /* Preferences.m */; };
 		13AC72241FAD4D7200585E3B /* Preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 13AC72231FAD4D7200585E3B /* Preferences.tiff */; };
 		13AC72271FAD4D7200585E3B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC72251FAD4D7200585E3B /* Preferences.xib */; };
+		13AC72301FAD4E2400585E3B /* Preferences.prefPane in Copy Preferences Pane */ = {isa = PBXBuildFile; fileRef = 13AC721D1FAD4D7200585E3B /* Preferences.prefPane */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13AE25131F9052730073912E /* EmojiDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A4CCC1F904CA20020BDBE /* EmojiDictionary.swift */; };
 		13B7E6621F6D6327008C528A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13BE30431F731F7B001D3AF8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30421F731F7B001D3AF8 /* Tests.swift */; };
@@ -47,6 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		13AC722D1FAD4E0400585E3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 130DC5C91F65F91D00BBCB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13AC721C1FAD4D7200585E3B;
+			remoteInfo = Preferences;
+		};
 		13BE30451F731F7B001D3AF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 130DC5C91F65F91D00BBCB60 /* Project object */;
@@ -55,6 +63,20 @@
 			remoteInfo = EmojiIM;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		13AC722F1FAD4E1400585E3B /* Copy Preferences Pane */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				13AC72301FAD4E2400585E3B /* Preferences.prefPane in Copy Preferences Pane */,
+			);
+			name = "Copy Preferences Pane";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		130423681F6C9927008989B1 /* InputMethodIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "InputMethodIcon@2x.tiff"; sourceTree = "<group>"; };
@@ -325,10 +347,12 @@
 				130DC5CF1F65F91D00BBCB60 /* Resources */,
 				653CC9549B17E6922B7DC7B8 /* [CP] Embed Pods Frameworks */,
 				75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */,
+				13AC722F1FAD4E1400585E3B /* Copy Preferences Pane */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				13AC722E1FAD4E0400585E3B /* PBXTargetDependency */,
 			);
 			name = EmojiIM;
 			productName = EmojiIM;
@@ -656,6 +680,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		13AC722E1FAD4E0400585E3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13AC721C1FAD4D7200585E3B /* Preferences */;
+			targetProxy = 13AC722D1FAD4E0400585E3B /* PBXContainerItemProxy */;
+		};
 		13BE30461F731F7B001D3AF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 130DC5D01F65F91D00BBCB60 /* EmojiIM */;
