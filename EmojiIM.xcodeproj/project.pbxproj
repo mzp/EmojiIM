@@ -16,9 +16,8 @@
 		134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134922DE1F6B33AF000AA483 /* EmojiInputController.swift */; };
 		134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
 		136A4CCD1F904CA20020BDBE /* EmojiDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A4CCC1F904CA20020BDBE /* EmojiDictionary.swift */; };
+		13779B981FB3351C001529BF /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13779B971FB3351C001529BF /* Preferences.swift */; };
 		13A455CD1F9F5D2900F2D3EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13A455CF1F9F5D2900F2D3EA /* InfoPlist.strings */; };
-		13AC72201FAD4D7200585E3B /* Preferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 13AC721F1FAD4D7200585E3B /* Preferences.h */; };
-		13AC72221FAD4D7200585E3B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC72211FAD4D7200585E3B /* Preferences.m */; };
 		13AC72241FAD4D7200585E3B /* Preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 13AC72231FAD4D7200585E3B /* Preferences.tiff */; };
 		13AC72271FAD4D7200585E3B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC72251FAD4D7200585E3B /* Preferences.xib */; };
 		13AC72301FAD4E2400585E3B /* Preferences.prefPane in Copy Preferences Pane */ = {isa = PBXBuildFile; fileRef = 13AC721D1FAD4D7200585E3B /* Preferences.prefPane */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -91,10 +90,9 @@
 		134922DE1F6B33AF000AA483 /* EmojiInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiInputController.swift; sourceTree = "<group>"; };
 		134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InputMethodIcon.tiff; sourceTree = "<group>"; };
 		136A4CCC1F904CA20020BDBE /* EmojiDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDictionary.swift; sourceTree = "<group>"; };
+		13779B971FB3351C001529BF /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		13A455D01F9F5E1D00F2D3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		13AC721D1FAD4D7200585E3B /* Preferences.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Preferences.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		13AC721F1FAD4D7200585E3B /* Preferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
-		13AC72211FAD4D7200585E3B /* Preferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		13AC72231FAD4D7200585E3B /* Preferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Preferences.tiff; sourceTree = "<group>"; };
 		13AC72261FAD4D7200585E3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Preferences.xib; sourceTree = "<group>"; };
 		13AC72281FAD4D7200585E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -226,8 +224,7 @@
 		13AC721E1FAD4D7200585E3B /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				13AC721F1FAD4D7200585E3B /* Preferences.h */,
-				13AC72211FAD4D7200585E3B /* Preferences.m */,
+				13779B971FB3351C001529BF /* Preferences.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13AC72201FAD4D7200585E3B /* Preferences.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13AC72221FAD4D7200585E3B /* Preferences.m in Sources */,
+				13779B981FB3351C001529BF /* Preferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,12 +866,16 @@
 		13AC722A1FAD4D7200585E3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VG2YYSKSHY;
 				INFOPLIST_FILE = Resources/Preferences/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.emojiim.Preferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -883,12 +883,16 @@
 		13AC722B1FAD4D7200585E3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VG2YYSKSHY;
 				INFOPLIST_FILE = Resources/Preferences/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.emojiim.Preferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;
