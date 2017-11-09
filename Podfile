@@ -2,6 +2,7 @@ platform :osx, '10.11'
 
 abstract_target 'App' do
   use_frameworks!
+  pod 'NorthLayout'
   pod 'ReactiveAutomaton'
   pod 'ReactiveCocoa'
   pod 'ReactiveSwift'
@@ -9,6 +10,8 @@ abstract_target 'App' do
   pod '※ikemen'
 
   target 'EmojiIM'
+  target 'Preferences'
+
   target 'Tests'
 end
 

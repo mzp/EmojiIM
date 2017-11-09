@@ -42,6 +42,7 @@
 		13FFA38E1F93469000852AC5 /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
 		13FFA38F1F93469000852AC5 /* NormalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3891F93455B00852AC5 /* NormalMapping.swift */; };
 		13FFA3901F93469000852AC5 /* SelectionMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA38B1F9345BF00852AC5 /* SelectionMapping.swift */; };
+		5D1F7FDD665FF9804AF7D101 /* Pods_App_Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B494E87050783B4832BE9B16 /* Pods_App_Preferences.framework */; };
 		5E7D0D81BC08254996EC1B33 /* Pods_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */; };
 		62C3338358EABF73DAE424C3 /* Pods_App_EmojiIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */; };
 /* End PBXBuildFile section */
@@ -114,8 +115,11 @@
 		56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_EmojiIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6758A5B9F5A7934030A29990 /* Pods-App-EmojiIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.debug.xcconfig"; sourceTree = "<group>"; };
 		A06EE18786E85339F30239C2 /* Pods-App-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B494E87050783B4832BE9B16 /* Pods_App_Preferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Preferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B6E94700E2F417D33648E9 /* Pods-App-Preferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Preferences.release.xcconfig"; path = "Pods/Target Support Files/Pods-App-Preferences/Pods-App-Preferences.release.xcconfig"; sourceTree = "<group>"; };
 		D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-EmojiIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM.release.xcconfig"; sourceTree = "<group>"; };
 		DDB61C9BCDAD0639BAA71AE3 /* Pods-App-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F6584D07C0ED724FC517EC11 /* Pods-App-Preferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Preferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-Preferences/Pods-App-Preferences.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1F7FDD665FF9804AF7D101 /* Pods_App_Preferences.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +310,8 @@
 				D153801FDD87A2200FA8B3FE /* Pods-App-EmojiIM.release.xcconfig */,
 				A06EE18786E85339F30239C2 /* Pods-App-Tests.debug.xcconfig */,
 				DDB61C9BCDAD0639BAA71AE3 /* Pods-App-Tests.release.xcconfig */,
+				F6584D07C0ED724FC517EC11 /* Pods-App-Preferences.debug.xcconfig */,
+				D0B6E94700E2F417D33648E9 /* Pods-App-Preferences.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 			children = (
 				56A1EA7CC6D607D11255E39C /* Pods_App_EmojiIM.framework */,
 				2A18E5675D99E8F48FCF12A7 /* Pods_App_Tests.framework */,
+				B494E87050783B4832BE9B16 /* Pods_App_Preferences.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,10 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13AC72291FAD4D7200585E3B /* Build configuration list for PBXNativeTarget "Preferences" */;
 			buildPhases = (
+				04CB663ABD2571D5069DCACF /* [CP] Check Pods Manifest.lock */,
 				13AC72181FAD4D7200585E3B /* Sources */,
 				13AC72191FAD4D7200585E3B /* Frameworks */,
 				13AC721A1FAD4D7200585E3B /* Headers */,
 				13AC721B1FAD4D7200585E3B /* Resources */,
+				6E9580179282A70A3189DCFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -477,6 +487,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04CB663ABD2571D5069DCACF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-App-Preferences-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		130DC5E31F65FB5A00BBCB60 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -512,6 +540,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FootlessParser/FootlessParser.framework",
+				"${BUILT_PRODUCTS_DIR}/NorthLayout/NorthLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveAutomaton/ReactiveAutomaton.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
@@ -520,6 +550,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FootlessParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NorthLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveAutomaton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
@@ -538,6 +570,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FootlessParser/FootlessParser.framework",
+				"${BUILT_PRODUCTS_DIR}/NorthLayout/NorthLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveAutomaton/ReactiveAutomaton.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
@@ -546,6 +580,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FootlessParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NorthLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveAutomaton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
@@ -573,6 +609,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E9580179282A70A3189DCFF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-Preferences/Pods-App-Preferences-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */ = {
@@ -865,6 +916,7 @@
 		};
 		13AC722A1FAD4D7200585E3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6584D07C0ED724FC517EC11 /* Pods-App-Preferences.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -882,6 +934,7 @@
 		};
 		13AC722B1FAD4D7200585E3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B6E94700E2F417D33648E9 /* Pods-App-Preferences.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
