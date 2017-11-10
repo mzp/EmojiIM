@@ -1,4 +1,7 @@
 PODS:
+  - FootlessParser (0.4)
+  - NorthLayout (4.0.0):
+    - FootlessParser (~> 0.4)
   - ReactiveAutomaton (0.2.0):
     - ReactiveSwift (~> 1.0.0)
   - ReactiveCocoa (5.0.0):
@@ -10,6 +13,7 @@ PODS:
   - ※ikemen (0.2.0)
 
 DEPENDENCIES:
+  - NorthLayout
   - ReactiveAutomaton
   - ReactiveCocoa
   - ReactiveSwift
@@ -18,6 +22,8 @@ DEPENDENCIES:
   - ※ikemen
 
 SPEC CHECKSUMS:
+  FootlessParser: 17af528d685057d7a48c3231bbe0a7babb163775
+  NorthLayout: f62ab0dd41bc4ba9178174a1a90fe2a3f097e53e
   ReactiveAutomaton: f5f04f0c1066d9b5e74a29da43d27029845c5379
   ReactiveCocoa: 60ef0da915b4f70c34ebecc3f4fb8f96af0e53d6
   ReactiveSwift: b1453c8885ebfb9b09b6d60bc5bc3303f56dc72c
@@ -25,6 +31,6 @@ SPEC CHECKSUMS:
   SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
   ※ikemen: c04aecee4293a2b6deb2119f7e67e7a82c6dea06
 
-PODFILE CHECKSUM: 01ce24a1ee527c85e73ae05f1ec8bc296a5a77e7
+PODFILE CHECKSUM: 3f7caa38017983cd739a9f06e0d6e55e987e6977
 
 COCOAPODS: 1.3.1
