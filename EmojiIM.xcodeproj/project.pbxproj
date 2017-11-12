@@ -35,6 +35,7 @@
 		13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */; };
 		13C46F261FB86E10005A8348 /* Collection+Every.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C46F251FB86E0E005A8348 /* Collection+Every.swift */; };
 		13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */; };
+		13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
 		13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3871F93450200852AC5 /* MappingDefinition.swift */; };
 		13FFA38A1F93455B00852AC5 /* NormalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3891F93455B00852AC5 /* NormalMapping.swift */; };
@@ -704,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13779B981FB3351C001529BF /* Preferences.swift in Sources */,
+				13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */,
 				13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
