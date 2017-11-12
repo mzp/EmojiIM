@@ -33,6 +33,7 @@
 		13BE30631F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */; };
+		13C46F201FB86D3D005A8348 /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C46F1E1FB86D28005A8348 /* NSTextField+Label.swift */; };
 		13D45CD01F93090200D4CE5D /* Collection+Every.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CCF1F93090200D4CE5D /* Collection+Every.swift */; };
 		13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
 		13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3871F93450200852AC5 /* MappingDefinition.swift */; };
@@ -106,6 +107,7 @@
 		13BE30591F7325BA001D3AF8 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAutomaton.swift; sourceTree = "<group>"; };
 		13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonTest.swift; sourceTree = "<group>"; };
+		13C46F1E1FB86D28005A8348 /* NSTextField+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
 		13D45CCF1F93090200D4CE5D /* Collection+Every.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Every.swift"; sourceTree = "<group>"; };
 		13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingMapping.swift; sourceTree = "<group>"; };
 		13FFA3871F93450200852AC5 /* MappingDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingDefinition.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				13D45CCF1F93090200D4CE5D /* Collection+Every.swift */,
+				13C46F1E1FB86D28005A8348 /* NSTextField+Label.swift */,
 			);
 			name = Extension;
 			path = "New Group";
@@ -702,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13779B981FB3351C001529BF /* Preferences.swift in Sources */,
+				13C46F201FB86D3D005A8348 /* NSTextField+Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

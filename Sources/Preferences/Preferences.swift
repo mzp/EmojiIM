@@ -13,13 +13,8 @@ import PreferencePanes
 @objc(Preferences)
 public class Preferences: NSPreferencePane {
     override public func mainViewDidLoad() {
-        let label = NSTextField() ※ {
-            $0.stringValue = "🍣"
+        let label = NSTextField.label(text: "🍣") ※ {
             $0.font = NSFont.systemFont(ofSize: 120)
-            $0.drawsBackground = false
-            $0.isBordered = false
-            $0.isEditable = false
-            $0.isSelectable = false
         }
         let autolayout = mainView.northLayoutFormat([:], ["label": label])
         autolayout("H:|[label]|")
