@@ -37,6 +37,7 @@
 		13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */; };
 		13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
+		13EBC3021FB9B1790036A072 /* TISInputSource+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBC3011FB9B1790036A072 /* TISInputSource+Property.swift */; };
 		13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3871F93450200852AC5 /* MappingDefinition.swift */; };
 		13FFA38A1F93455B00852AC5 /* NormalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3891F93455B00852AC5 /* NormalMapping.swift */; };
 		13FFA38C1F9345BF00852AC5 /* SelectionMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA38B1F9345BF00852AC5 /* SelectionMapping.swift */; };
@@ -90,6 +91,7 @@
 		130DC5DC1F65F91D00BBCB60 /* EmojiIM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiIM.entitlements; sourceTree = "<group>"; };
 		1313B8221F935741004B6A2F /* EmojiDefinition.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmojiDefinition.json; sourceTree = "<group>"; };
 		1313B8231F93579E004B6A2F /* EmojiDictionaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDictionaryTest.swift; sourceTree = "<group>"; };
+		134427A11FB88D39002C68F9 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		134922DE1F6B33AF000AA483 /* EmojiInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiInputController.swift; sourceTree = "<group>"; };
 		134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InputMethodIcon.tiff; sourceTree = "<group>"; };
 		136A4CCC1F904CA20020BDBE /* EmojiDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDictionary.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
 		13C46F251FB86E0E005A8348 /* Collection+Every.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Every.swift"; sourceTree = "<group>"; };
 		13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingMapping.swift; sourceTree = "<group>"; };
+		13EBC3011FB9B1790036A072 /* TISInputSource+Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Property.swift"; sourceTree = "<group>"; };
 		13FFA3871F93450200852AC5 /* MappingDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingDefinition.swift; sourceTree = "<group>"; };
 		13FFA3891F93455B00852AC5 /* NormalMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMapping.swift; sourceTree = "<group>"; };
 		13FFA38B1F9345BF00852AC5 /* SelectionMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionMapping.swift; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				130DC5D41F65F91D00BBCB60 /* AppDelegate.swift */,
+				134427A11FB88D39002C68F9 /* BridgeHeader.h */,
 				13BE30541F73255D001D3AF8 /* Automaton */,
 				136A4CCB1F904C870020BDBE /* Dictionary */,
 				13C46F231FB86DF4005A8348 /* Extension */,
@@ -291,6 +295,7 @@
 			children = (
 				13C46F251FB86E0E005A8348 /* Collection+Every.swift */,
 				13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */,
+				13EBC3011FB9B1790036A072 /* TISInputSource+Property.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -704,6 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EBC3021FB9B1790036A072 /* TISInputSource+Property.swift in Sources */,
 				13779B981FB3351C001529BF /* Preferences.swift in Sources */,
 				13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */,
 				13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */,
@@ -932,6 +938,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.emojiim.Preferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
@@ -950,6 +957,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.emojiim.Preferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
