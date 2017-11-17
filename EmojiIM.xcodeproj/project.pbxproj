@@ -37,6 +37,8 @@
 		13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */; };
 		13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
+		13DD45F41FB9C9D100EE1758 /* SettingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBC2FE1FB91FA20036A072 /* SettingStore.swift */; };
+		13EBC3001FB91FC90036A072 /* SettingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBC2FE1FB91FA20036A072 /* SettingStore.swift */; };
 		13EBC3021FB9B1790036A072 /* TISInputSource+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBC3011FB9B1790036A072 /* TISInputSource+Property.swift */; };
 		13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3871F93450200852AC5 /* MappingDefinition.swift */; };
 		13FFA38A1F93455B00852AC5 /* NormalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3891F93455B00852AC5 /* NormalMapping.swift */; };
@@ -113,6 +115,7 @@
 		13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
 		13C46F251FB86E0E005A8348 /* Collection+Every.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Every.swift"; sourceTree = "<group>"; };
 		13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingMapping.swift; sourceTree = "<group>"; };
+		13EBC2FE1FB91FA20036A072 /* SettingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingStore.swift; sourceTree = "<group>"; };
 		13EBC3011FB9B1790036A072 /* TISInputSource+Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Property.swift"; sourceTree = "<group>"; };
 		13FFA3871F93450200852AC5 /* MappingDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingDefinition.swift; sourceTree = "<group>"; };
 		13FFA3891F93455B00852AC5 /* NormalMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMapping.swift; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 				13C46F231FB86DF4005A8348 /* Extension */,
 				13BE304A1F73222F001D3AF8 /* InputMethodKit */,
 				13AC721E1FAD4D7200585E3B /* Preferences */,
+				13EBC2FD1FB91F410036A072 /* Setting */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -298,6 +302,14 @@
 				13EBC3011FB9B1790036A072 /* TISInputSource+Property.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		13EBC2FD1FB91F410036A072 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				13EBC2FE1FB91FA20036A072 /* SettingStore.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		13FFA3861F9344F200852AC5 /* Mapping */ = {
@@ -690,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */,
+				13DD45F41FB9C9D100EE1758 /* SettingStore.swift in Sources */,
 				130DC5D51F65F91D00BBCB60 /* AppDelegate.swift in Sources */,
 				13FFA38C1F9345BF00852AC5 /* SelectionMapping.swift in Sources */,
 				13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */,
@@ -710,6 +723,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13EBC3021FB9B1790036A072 /* TISInputSource+Property.swift in Sources */,
+				13EBC3001FB91FC90036A072 /* SettingStore.swift in Sources */,
 				13779B981FB3351C001529BF /* Preferences.swift in Sources */,
 				13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */,
 				13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */,
