@@ -14,6 +14,7 @@ import ReactiveCocoa
 
 @objc(Preferences)
 public class Preferences: NSPreferencePane {
+    private let store: SettingStore = SettingStore()
     private lazy var keyboardLayouts: [TISInputSource]? = TISInputSource.keyboardLayouts()
 
     override public func mainViewDidLoad() {
@@ -23,6 +24,14 @@ public class Preferences: NSPreferencePane {
         let keyboard = NSPopUpButton() ※ {
             for layout in keyboardLayouts ?? [] {
                 $0.addItem(withTitle: layout.localizedName)
+            }
+            $0.reactive.selectedIndexes.observeValues {
+                if let layout = self.keyboardLayouts?[$0] {
+                    self.store.setKeyboardLayout(inputSourceID: layout.inputSourceID)
+                }
+            }
+            if let index = keyboardLayouts?.index(where: { $0.inputSourceID == store.keyboardLayout() }) {
+                $0.selectItem(at: index)
             }
         }
         let revisionLabel = NSTextField.label(text: "Revision:")  ※ {
