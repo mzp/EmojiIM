@@ -33,7 +33,9 @@
 		13BE30631F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30571F732577001D3AF8 /* ReactiveAutomaton+Action.swift */; };
 		13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */; };
-		13D45CD01F93090200D4CE5D /* Collection+Every.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CCF1F93090200D4CE5D /* Collection+Every.swift */; };
+		13C46F261FB86E10005A8348 /* Collection+Every.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C46F251FB86E0E005A8348 /* Collection+Every.swift */; };
+		13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */; };
+		13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E6611F6D631F008C528A /* BuildInfo.swift */; };
 		13D45CD21F9340F600D4CE5D /* ComposingMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */; };
 		13FFA3881F93450200852AC5 /* MappingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3871F93450200852AC5 /* MappingDefinition.swift */; };
 		13FFA38A1F93455B00852AC5 /* NormalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFA3891F93455B00852AC5 /* NormalMapping.swift */; };
@@ -106,7 +108,8 @@
 		13BE30591F7325BA001D3AF8 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		13BE305A1F7325BA001D3AF8 /* EmojiAutomaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAutomaton.swift; sourceTree = "<group>"; };
 		13BE30621F7325E6001D3AF8 /* AutomatonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonTest.swift; sourceTree = "<group>"; };
-		13D45CCF1F93090200D4CE5D /* Collection+Every.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Every.swift"; sourceTree = "<group>"; };
+		13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
+		13C46F251FB86E0E005A8348 /* Collection+Every.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Every.swift"; sourceTree = "<group>"; };
 		13D45CD11F9340F600D4CE5D /* ComposingMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingMapping.swift; sourceTree = "<group>"; };
 		13FFA3871F93450200852AC5 /* MappingDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingDefinition.swift; sourceTree = "<group>"; };
 		13FFA3891F93455B00852AC5 /* NormalMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMapping.swift; sourceTree = "<group>"; };
@@ -188,7 +191,7 @@
 				130DC5D41F65F91D00BBCB60 /* AppDelegate.swift */,
 				13BE30541F73255D001D3AF8 /* Automaton */,
 				136A4CCB1F904C870020BDBE /* Dictionary */,
-				13D45CCE1F9308E900D4CE5D /* Extension */,
+				13C46F231FB86DF4005A8348 /* Extension */,
 				13BE304A1F73222F001D3AF8 /* InputMethodKit */,
 				13AC721E1FAD4D7200585E3B /* Preferences */,
 			);
@@ -283,13 +286,13 @@
 			path = Automaton;
 			sourceTree = "<group>";
 		};
-		13D45CCE1F9308E900D4CE5D /* Extension */ = {
+		13C46F231FB86DF4005A8348 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				13D45CCF1F93090200D4CE5D /* Collection+Every.swift */,
+				13C46F251FB86E0E005A8348 /* Collection+Every.swift */,
+				13C46F241FB86E0E005A8348 /* NSTextField+Label.swift */,
 			);
-			name = Extension;
-			path = "New Group";
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		13FFA3861F9344F200852AC5 /* Mapping */ = {
@@ -691,7 +694,7 @@
 				13BE305D1F7325CC001D3AF8 /* InputMethodState.swift in Sources */,
 				134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */,
 				13BE30631F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */,
-				13D45CD01F93090200D4CE5D /* Collection+Every.swift in Sources */,
+				13C46F261FB86E10005A8348 /* Collection+Every.swift in Sources */,
 				13BE305B1F7325C8001D3AF8 /* EmojiAutomaton.swift in Sources */,
 				13FFA38A1F93455B00852AC5 /* NormalMapping.swift in Sources */,
 			);
@@ -702,6 +705,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13779B981FB3351C001529BF /* Preferences.swift in Sources */,
+				13C46F281FB86EB3005A8348 /* BuildInfo.swift in Sources */,
+				13C46F271FB86E14005A8348 /* NSTextField+Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,7 +926,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VG2YYSKSHY;
 				INFOPLIST_FILE = Resources/Preferences/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.emojiim.Preferences;
