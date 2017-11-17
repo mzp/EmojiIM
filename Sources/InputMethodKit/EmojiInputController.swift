@@ -93,7 +93,7 @@ extension EmojiInputController /* IMKStateSetting*/ {
         guard let client = sender as? IMKTextInput else {
             return
         }
-        client.overrideKeyboard(withKeyboardNamed: "com.apple.keylayout.US")
+        client.overrideKeyboard(withKeyboardNamed: SettingStore().keyboardLayout())
     }
 
     override func deactivateServer(_ sender: Any) {
@@ -110,7 +110,7 @@ extension EmojiInputController /* IMKStateSetting*/ {
             return
         }
         directMode = value == "com.apple.inputmethod.Roman"
-        sender.overrideKeyboard(withKeyboardNamed: "com.apple.keylayout.US")
+        sender.overrideKeyboard(withKeyboardNamed: SettingStore().keyboardLayout())
     }
 }
 
