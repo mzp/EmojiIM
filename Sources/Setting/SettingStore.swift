@@ -27,11 +27,7 @@ internal class SettingStore {
         if inSandbox {
             return UserDefaults.standard
         } else {
-            return UserDefaults(suiteName: suiteName)
+            return UserDefaults(suiteName: kSuiteName)
         }
     }()
-
-    private var suiteName: String {
-        return "\(NSHomeDirectory())/Library/Containers/\(kSuiteName)/Data/Library/Preferences/\(kSuiteName)"
-    }
 }
