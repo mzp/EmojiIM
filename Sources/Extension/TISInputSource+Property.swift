@@ -19,6 +19,12 @@ extension TISInputSource {
             to: NSString.self) as String
     }
 
+    var scriptCode: Int? {
+        let r = TISGetInputSourceProperty(self, "TSMInputSourcePropertyScriptCode" as CFString)
+        let n = unsafeBitCast(r, to: NSInteger.self)
+        return n
+    }
+
     class func keyboardLayouts() -> [TISInputSource]? {
         let conditions = CFDictionaryCreateMutable(nil, 2, nil, nil)
         CFDictionaryAddValue(conditions,
