@@ -79,6 +79,23 @@ internal class AutomatonTest: XCTestCase {
         XCTAssertEqual(text, ":")
     }
 
+    func testSelectWhileComposing() {
+        var text: String = ""
+        automaton.text.observeValues { text.append($0) }
+
+        _ = automaton.handle(UserInput(eventType: .colon))
+        XCTAssertEqual(automaton.candidates.value, [])
+
+        _ = automaton.handle(UserInput(eventType: .input(text: "s")))
+        _ = automaton.handle(UserInput(eventType: .input(text: "u")))
+        _ = automaton.handle(UserInput(eventType: .input(text: "s")))
+        XCTAssertTrue(automaton.candidates.value.contains("🍣"), "\(automaton.candidates.value) doesn't contain 🍣")
+
+        _ = automaton.handle(UserInput(eventType: .selected(candidate: "🍣")))
+        XCTAssertEqual(automaton.candidates.value, [])
+        XCTAssertEqual(text, "🍣")
+    }
+
     func testCandidates() {
         var text: String = ""
         automaton.text.observeValues { text.append($0) }

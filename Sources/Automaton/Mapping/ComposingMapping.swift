@@ -27,6 +27,12 @@ internal class ComposingMapping: MappingDefinition {
                 context.text.send(value: context.markedText.value)
                 context.clear()
             },
+            UserInput.isSelected <|> .composing => .normal <|> {
+                $0.ifSelected {
+                    context.text.send(value: $0)
+                }
+                context.clear()
+            },
             UserInput.typeof(.navigation) <|> .composing => .selection  <|> context.forward
         ]
     }
