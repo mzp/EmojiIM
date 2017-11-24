@@ -15,7 +15,10 @@ import ReactiveCocoa
 @objc(Preferences)
 public class Preferences: NSPreferencePane {
     private let store: SettingStore = SettingStore()
-    private lazy var keyboardLayouts: [TISInputSource]? = TISInputSource.keyboardLayouts()
+    private lazy var keyboardLayouts: [TISInputSource]? = TISInputSource.keyboardLayouts()?.filter {
+        // 39 means English keyboard layout
+        $0.scriptCode == 39
+    }
 
     override public func mainViewDidLoad() {
         let keyboardLabel = NSTextField.label(text: "Keybaord:") ※ {
