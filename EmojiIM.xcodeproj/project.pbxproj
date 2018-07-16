@@ -370,7 +370,6 @@
 				130DC5CE1F65F91D00BBCB60 /* Frameworks */,
 				130DC5CF1F65F91D00BBCB60 /* Resources */,
 				653CC9549B17E6922B7DC7B8 /* [CP] Embed Pods Frameworks */,
-				75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */,
 				13AC722F1FAD4E1400585E3B /* Copy Preferences Pane */,
 			);
 			buildRules = (
@@ -392,7 +391,6 @@
 				13AC72191FAD4D7200585E3B /* Frameworks */,
 				13AC721A1FAD4D7200585E3B /* Headers */,
 				13AC721B1FAD4D7200585E3B /* Resources */,
-				6E9580179282A70A3189DCFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -412,7 +410,6 @@
 				13BE303D1F731F7B001D3AF8 /* Frameworks */,
 				13BE303E1F731F7B001D3AF8 /* Resources */,
 				4423F8C02B3FB0B96398F1CE /* [CP] Embed Pods Frameworks */,
-				F08483E8FD3F514435731579 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,7 +534,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${PODS_ROOT}/..\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "# disable swiftlint temporary. \n# cd \"${PODS_ROOT}/..\"\n# \"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		13B7E6601F6D6288008C528A /* EmbedBuildInfo */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -631,36 +628,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E9580179282A70A3189DCFF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-Preferences/Pods-App-Preferences-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		75474E975C30AE6504B77B7C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-EmojiIM/Pods-App-EmojiIM-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EC78CF836CE60D31DBDD9ACB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -677,21 +644,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F08483E8FD3F514435731579 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App-Tests/Pods-App-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -914,7 +866,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -935,7 +887,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -953,7 +905,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -972,7 +924,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;
@@ -992,7 +944,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
 			};
 			name = Debug;
@@ -1013,7 +965,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
 			};
 			name = Release;

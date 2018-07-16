@@ -30,9 +30,9 @@ internal class EmojiDictionary {
     }
 
     func find(prefix: String) -> [String] {
-        let xs = entries.flatMap {
-            if $0.name.starts(with: prefix) {
-                return $0.emoji
+        let xs = entries.compactMap { (entry: Entry) -> String? in
+            if entry.name.starts(with: prefix) {
+                return entry.emoji
             } else {
                 return nil
             }
