@@ -534,7 +534,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${PODS_ROOT}/..\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "# disable swiftlint temporary. \n# cd \"${PODS_ROOT}/..\"\n# \"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		13B7E6601F6D6288008C528A /* EmbedBuildInfo */ = {
 			isa = PBXShellScriptBuildPhase;

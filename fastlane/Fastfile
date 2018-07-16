@@ -21,7 +21,7 @@ platform :mac do
   desc 'Runs all the tests'
   lane :test do
     sh('./embed_buildinfo')
-    swiftlint(executable: './Pods/SwiftLint/swiftlint')
+    # swiftlint(executable: './Pods/SwiftLint/swiftlint')
     scan
   end
 end
