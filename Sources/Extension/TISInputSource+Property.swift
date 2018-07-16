@@ -20,8 +20,8 @@ extension TISInputSource {
     }
 
     var scriptCode: Int? {
-        let r = TISGetInputSourceProperty(self, "TSMInputSourcePropertyScriptCode" as CFString)
-        let n = unsafeBitCast(r, to: NSInteger.self)
+        let r = TISGetInputSourceProperty(self, kTISPropertyScriptCode)
+        let n = unsafeBitCast(r, to: NSString.self).integerValue
         return n
     }
 

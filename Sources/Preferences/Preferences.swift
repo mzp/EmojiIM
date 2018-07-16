@@ -16,8 +16,8 @@ import ReactiveCocoa
 public class Preferences: NSPreferencePane {
     private let store: SettingStore = SettingStore()
     private lazy var keyboardLayouts: [TISInputSource]? = TISInputSource.keyboardLayouts()?.filter {
-        // 39 means English keyboard layout
-        $0.scriptCode == 39
+        // 0 means English keyboard layout
+        $0.scriptCode == 0
     }
 
     override public func mainViewDidLoad() {

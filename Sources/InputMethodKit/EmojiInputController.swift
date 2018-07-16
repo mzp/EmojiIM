@@ -21,7 +21,7 @@ internal class EmojiInputController: IMKInputController {
     ].reduce(CharacterSet()) { $0.union($1) }
 
     override init!(server: IMKServer, delegate: Any, client inputClient: Any) {
-        self.candidates = IMKCandidates(server: server, panelType: kIMKMain)
+        self.candidates = IMKCandidates(server: server, panelType: kIMKSingleColumnScrollingCandidatePanel)
         super.init(server: server, delegate: delegate, client: inputClient)
 
         guard let client = inputClient as? IMKTextInput else {

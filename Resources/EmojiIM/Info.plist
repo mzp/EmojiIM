@@ -68,6 +68,8 @@
 				<string>InputMethodIcon.tiff</string>
 				<key>tsInputModeDefaultStateKey</key>
 				<true/>
+				<key>tsInputModeIsVisibleKey</key>
+				<true/>
 			</dict>
 			<key>com.apple.inputmethod.Roman</key>
 			<dict>
@@ -82,6 +84,8 @@
 				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>InputMethodIcon.tiff</string>
 				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+				<key>tsInputModeIsVisibleKey</key>
 				<true/>
 			</dict>
 		</dict>
