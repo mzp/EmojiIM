@@ -11,4 +11,6 @@
 
 #include <Carbon/Carbon.h>
 
+extern const CFStringRef kTISPropertyScriptCode;
+
 #endif /* BridgeHeader_h */
