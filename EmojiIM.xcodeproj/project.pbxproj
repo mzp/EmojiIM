@@ -15,6 +15,8 @@
 		1313B8271F935DAA004B6A2F /* EmojiDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 1313B8221F935741004B6A2F /* EmojiDefinition.json */; };
 		134922DF1F6B33AF000AA483 /* EmojiInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134922DE1F6B33AF000AA483 /* EmojiInputController.swift */; };
 		134A02F01F6B36C60050216F /* InputMethodIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */; };
+		134CE31B20FC882200BC4009 /* TISInputSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134CE31A20FC882200BC4009 /* TISInputSourceTest.swift */; };
+		134CE31C20FC885200BC4009 /* TISInputSource+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBC3011FB9B1790036A072 /* TISInputSource+Property.swift */; };
 		136A4CCD1F904CA20020BDBE /* EmojiDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A4CCC1F904CA20020BDBE /* EmojiDictionary.swift */; };
 		13779B981FB3351C001529BF /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13779B971FB3351C001529BF /* Preferences.swift */; };
 		13A455CD1F9F5D2900F2D3EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13A455CF1F9F5D2900F2D3EA /* InfoPlist.strings */; };
@@ -96,6 +98,7 @@
 		134427A11FB88D39002C68F9 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		134922DE1F6B33AF000AA483 /* EmojiInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiInputController.swift; sourceTree = "<group>"; };
 		134922E01F6B33B9000AA483 /* InputMethodIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InputMethodIcon.tiff; sourceTree = "<group>"; };
+		134CE31A20FC882200BC4009 /* TISInputSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceTest.swift; sourceTree = "<group>"; };
 		136A4CCC1F904CA20020BDBE /* EmojiDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDictionary.swift; sourceTree = "<group>"; };
 		13779B971FB3351C001529BF /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		13A455D01F9F5E1D00F2D3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -214,6 +217,14 @@
 			path = Dictionary;
 			sourceTree = "<group>";
 		};
+		134CE31920FC880100BC4009 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				134CE31A20FC882200BC4009 /* TISInputSourceTest.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		136A4CCB1F904C870020BDBE /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +271,7 @@
 			children = (
 				13BE30611F7325E6001D3AF8 /* Automaton */,
 				1313B8251F9357B0004B6A2F /* Dictionary */,
+				134CE31920FC880100BC4009 /* Extension */,
 				13BE30421F731F7B001D3AF8 /* Tests.swift */,
 				13BE30441F731F7B001D3AF8 /* Info.plist */,
 			);
@@ -692,6 +704,8 @@
 				13AE25131F9052730073912E /* EmojiDictionary.swift in Sources */,
 				13BE305C1F7325C9001D3AF8 /* EmojiAutomaton.swift in Sources */,
 				13BE305F1F7325CD001D3AF8 /* InputMethodState.swift in Sources */,
+				134CE31B20FC882200BC4009 /* TISInputSourceTest.swift in Sources */,
+				134CE31C20FC885200BC4009 /* TISInputSource+Property.swift in Sources */,
 				13BE30651F73260E001D3AF8 /* AutomatonTest.swift in Sources */,
 				13BE30641F7325F9001D3AF8 /* ReactiveAutomaton+Action.swift in Sources */,
 				13FFA38F1F93469000852AC5 /* NormalMapping.swift in Sources */,
@@ -944,6 +958,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
 			};
@@ -965,6 +980,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
 			};
