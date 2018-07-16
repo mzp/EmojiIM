@@ -866,7 +866,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -887,7 +887,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.EmojiIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -905,7 +905,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -924,7 +924,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Sources/BridgeHeader.h;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;
@@ -944,7 +944,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
 			};
 			name = Debug;
@@ -965,7 +965,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mzp.inputmethod.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiIM.app/Contents/MacOS/EmojiIM";
 			};
 			name = Release;
